@@ -33,6 +33,12 @@ export class HeaderComponent implements OnInit {
     // Configurar observador de secciones
     this.setupSectionObserver();
 
+
+    this.i18n.langChange.subscribe((newLang) => {
+      this.currentLang = newLang;
+      this.updateNavItems();
+    });
+
     // Actualizar labels de navegación según el idioma
     this.updateNavItems();
   }
@@ -54,9 +60,7 @@ export class HeaderComponent implements OnInit {
 
   toggleLanguage() {
     const newLang = this.currentLang === 'es' ? 'en' : 'es';
-    this.currentLang = newLang;
     this.i18n.setLang(newLang);
-    this.updateNavItems();
   }
 
   private updateNavItems() {
