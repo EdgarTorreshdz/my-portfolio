@@ -1,350 +1,140 @@
-// Variables
+// Variables (mantener solo las esenciales)
 $primary: #3b82f6;
 $primary-dark: #2563eb;
-$secondary: #f7a82f;
-$text-dark: #1f2937;
-$text-light: #f3f4f6;
-$bg-light: #ffffff;
-$bg-dark: #111827;
-$gray-100: #f3f4f6;
-$gray-200: #e5e7eb;
-$gray-300: #d1d5db;
-$gray-600: #4b5563;
-$gray-700: #374151;
-$gray-800: #1f2937;
 
-// Mixins
-@mixin transition($property: all, $duration: 200ms, $easing: ease-in-out) {
-  transition: $property $duration $easing;
-}
-
-@mixin responsive($breakpoint) {
-  @media (min-width: $breakpoint) {
-    @content;
-  }
-}
-
-// About Styles
+// About Styles optimizado
 .about {
-  padding: 5rem 0;
-  background: $bg-light;
-
-  .dark & {
-    background: $bg-dark;
-  }
+  @apply py-20 bg-white dark:bg-gray-900;
 }
 
 .about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  @apply container mx-auto px-4 max-w-6xl;
 }
 
 // Header
 .about-header {
-  text-align: center;
-  margin-bottom: 3rem;
+  @apply text-center mb-12;
 }
 
 .about-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: $text-dark;
-  margin-bottom: 0.5rem;
-
-  .dark & {
-    color: $text-light;
-  }
-
-  @include responsive(768px) {
-    font-size: 3rem;
-  }
+  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4;
 }
 
 .about-subtitle {
-  font-size: 1.25rem;
-  color: $gray-600;
-  margin-bottom: 1.5rem;
-
-  .dark & {
-    color: $gray-300;
-  }
+  @apply text-xl text-gray-600 dark:text-gray-300 mb-6;
 }
 
 .about-divider {
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
-  margin: 0 auto;
-  border-radius: 2px;
+  @apply w-16 h-1 bg-gradient-to-r from-primary to-primary-dark mx-auto rounded-full;
 }
 
 // Profile Section
 .about-profile {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-bottom: 4rem;
-
-  @include responsive(1024px) {
-    grid-template-columns: 300px 1fr;
-    align-items: start;
-    gap: 3rem;
-  }
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16;
 }
 
 .about-image-container {
-  display: flex;
-  justify-content: center;
-}
-
-.about-image {
-  position: relative;
+  @apply flex justify-center;
 }
 
 .image-placeholder {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  color: white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-
-  .dark & {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-}
-
-.about-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  @apply w-64 h-64 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center text-white text-6xl shadow-xl dark:shadow-gray-900/30;
 }
 
 .about-basic-info {
-  text-align: center;
-
-  @include responsive(1024px) {
-    text-align: left;
-  }
+  @apply text-center lg:text-left;
 }
 
 .about-name {
-  font-size: 2rem;
-  font-weight: bold;
-  color: $text-dark;
-  margin-bottom: 0.5rem;
-
-  .dark & {
-    color: $text-light;
-  }
+  @apply text-3xl font-bold text-gray-900 dark:text-white mb-2;
 }
 
 .about-role {
-  font-size: 1.25rem;
-  color: $primary;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  @apply text-xl text-primary font-semibold mb-4;
 }
 
 .about-description {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: $gray-600;
-  margin-bottom: 2rem;
-
-  .dark & {
-    color: $gray-300;
-  }
+  @apply text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6;
 }
 
 .about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
+  @apply grid grid-cols-3 gap-4 mt-8;
 }
 
 .about-stat {
-  text-align: center;
-  padding: 1rem;
-  background: $gray-100;
-  border-radius: 12px;
-
-  .dark & {
-    background: $gray-800;
-  }
+  @apply text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl;
 }
 
 .stat-number {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: $primary;
-  margin-bottom: 0.25rem;
+  @apply block text-2xl font-bold text-primary dark:text-primary mb-1; // Cambiado a dark:text-primary
 }
 
 .stat-label {
-  display: block;
-  font-size: 0.875rem;
-  color: $gray-600;
-  font-weight: 500;
-
-  .dark & {
-    color: $gray-300;
-  }
+  @apply block text-sm text-gray-600 dark:text-gray-300 font-medium;
 }
 
 // Details Section
 .about-details {
-  margin-bottom: 4rem;
+  @apply mb-16;
 }
 
 .details-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: $text-dark;
-  margin-bottom: 1rem;
-
-  .dark & {
-    color: $text-light;
-  }
+  @apply text-2xl font-semibold text-gray-900 dark:text-white mb-4;
 }
 
 .details-description {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: $gray-600;
-  margin-bottom: 1.5rem;
-
-  .dark & {
-    color: $gray-300;
-  }
+  @apply text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6;
 }
 
 .about-features {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
-
-  @include responsive(768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 mt-8;
 }
 
 .feature-card {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  background: $gray-100;
-  border-radius: 16px;
-  @include transition(transform);
-
-  .dark & {
-    background: $gray-800;
-  }
-
-  &:hover {
-    transform: translateY(-4px);
-  }
-
-  @include responsive(768px) {
-    text-align: left;
-  }
+  @apply bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl text-center md:text-left transition-all duration-300 hover:translate-y-[-4px];
 }
 
 .feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
+  @apply text-4xl mb-4;
 }
 
 .feature-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: $text-dark;
-  margin-bottom: 0.5rem;
-
-  .dark & {
-    color: $text-light;
-  }
+  @apply text-xl font-semibold text-gray-900 dark:text-white mb-2;
 }
 
 .feature-description {
-  color: $gray-600;
-  line-height: 1.6;
-
-  .dark & {
-    color: $gray-300;
-  }
+  @apply text-gray-600 dark:text-gray-300;
 }
-
 
 // CTA Section
 .about-cta {
-  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
+  @apply bg-gradient-to-br from-primary to-primary-dark p-8 rounded-2xl text-center text-white;
 }
 
 .cta-content {
-  max-width: 600px;
-  margin: 0 auto;
+  @apply max-w-2xl mx-auto;
 }
 
 .cta-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  @apply text-3xl font-bold mb-4;
 }
 
 .cta-description {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+  @apply text-lg opacity-90 mb-8;
 }
 
 .cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  @apply flex flex-col sm:flex-row gap-4 justify-center;
 }
 
 .cta-button {
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  @include transition(all);
+  @apply px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1;
 
   &--primary {
-    background: white;
-    color: $primary;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.9);
-      transform: translateY(-2px);
-    }
+    @apply bg-white text-primary hover:bg-gray-100;
   }
 
   &--secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-
-    &:hover {
-      background: white;
-      color: $primary;
-      transform: translateY(-2px);
-    }
+    @apply border-2 border-white text-white hover:bg-white hover:text-primary;
   }
 }

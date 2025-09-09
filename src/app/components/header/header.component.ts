@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   navItems = [
     { section: 'hero', label: 'Inicio' },
     { section: 'about', label: 'Sobre mí' },
+    { section: 'skills', label: 'Habilidades' },
     { section: 'projects', label: 'Proyectos' },
     { section: 'contact', label: 'Contacto' }
   ];
@@ -62,6 +63,7 @@ export class HeaderComponent implements OnInit {
     this.navItems = [
       { section: 'hero', label: this.t('header.home') },
       { section: 'about', label: this.t('header.about') },
+      { section: 'skills', label: this.t('header.skills') },
       { section: 'projects', label: this.t('header.projects') },
       { section: 'contact', label: this.t('header.contact') }
     ];
@@ -83,7 +85,7 @@ export class HeaderComponent implements OnInit {
   }
 
   private setupSectionObserver() {
-    const sections = ['hero', 'about', 'projects', 'contact'];
+    const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
     const options = { threshold: 0.3 };
 
     const observer = new IntersectionObserver((entries) => {

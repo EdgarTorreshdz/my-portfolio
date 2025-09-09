@@ -1,14 +1,10 @@
-<!-- about.component.html -->
-<section id="about" class="py-20 bg-white dark:bg-gray-900">
-  <div class="container mx-auto px-4 max-w-6xl">
+<section id="about" class="about">
+  <div class="about-container">
     <!-- Header Section -->
-    <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-        {{ aboutData.title }}
-      </h2>
-      <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
-        {{ aboutData.subtitle }}
-      </p>
+    <div class="about-header">
+      <h2 class="about-title">{{ aboutData.title }}</h2>
+      <p class="about-subtitle">{{ aboutData.subtitle }}</p>
+      <div class="about-divider"></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -16,27 +12,20 @@
       <div>
         <!-- Descripción detallada -->
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            {{ t('about.storyTitle') }}
-          </h3>
-          <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+          <h3 class="details-title">{{ t('about.storyTitle') }}</h3>
+          <p class="details-description">
             {{ aboutData.longDescription }}
           </p>
-          <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p class="details-description">
             {{ t('about.passionStatement') }}
           </p>
         </div>
 
         <!-- Stats DETALLADAS -->
-        <div class="grid grid-cols-2 gap-6 mb-8">
-          <div *ngFor="let stat of aboutData.stats"
-               class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl">
-            <div class="text-3xl font-bold text-primary dark:text-primary-light mb-2">
-              {{ stat.number }}
-            </div>
-            <div class="text-gray-600 dark:text-gray-300 text-sm">
-              {{ stat.label }}
-            </div>
+        <div class="about-stats">
+          <div *ngFor="let stat of aboutData.stats" class="about-stat">
+            <span class="stat-number">{{ stat.number }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
           </div>
         </div>
       </div>
@@ -45,9 +34,7 @@
       <div>
         <!-- Experiencia Profesional -->
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-            Experiencia Profesional
-          </h3>
+          <h3 class="details-title">Experiencia Profesional</h3>
           <div class="space-y-6">
             <div *ngFor="let exp of aboutData.experience"
                  class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl">
@@ -72,9 +59,7 @@
 
         <!-- Educación -->
         <div class="mb-8">
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-            {{ aboutData.education.title }}
-          </h3>
+          <h3 class="details-title">{{ aboutData.education.title }}</h3>
           <div class="space-y-4">
             <div *ngFor="let edu of aboutData.education.items"
                  class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl">
@@ -93,27 +78,26 @@
 
     <!-- Features y CTA (al final) -->
     <div class="mt-16">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div *ngFor="let feature of aboutData.features"
-             class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl text-center">
-          <div class="text-4xl mb-4">{{ feature.icon }}</div>
-          <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-            {{ feature.title }}
-          </h4>
-          <p class="text-gray-600 dark:text-gray-300">{{ feature.description }}</p>
+      <div class="about-features">
+        <div *ngFor="let feature of aboutData.features" class="feature-card">
+          <div class="feature-icon">{{ feature.icon }}</div>
+          <h4 class="feature-title">{{ feature.title }}</h4>
+          <p class="feature-description">{{ feature.description }}</p>
         </div>
       </div>
 
-      <div class="bg-gradient-to-br from-primary to-primary-dark p-8 rounded-2xl text-center text-white">
-        <h3 class="text-3xl font-bold mb-4">{{ t('about.cta.title') }}</h3>
-        <p class="text-lg opacity-90 mb-8">{{ t('about.cta.subtitle') }}</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold">
-            {{ t('about.cta.contact') }}
-          </a>
-          <a href="#projects" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold">
-            {{ t('about.cta.viewProjects') }}
-          </a>
+      <div class="about-cta mt-12">
+        <div class="cta-content">
+          <h3 class="cta-title">{{ t('about.cta.title') }}</h3>
+          <p class="cta-description">{{ t('about.cta.subtitle') }}</p>
+          <div class="cta-buttons">
+            <a href="#contact" class="cta-button cta-button--primary">
+              {{ t('about.cta.contact') }}
+            </a>
+            <a href="#projects" class="cta-button cta-button--secondary">
+              {{ t('about.cta.viewProjects') }}
+            </a>
+          </div>
         </div>
       </div>
     </div>

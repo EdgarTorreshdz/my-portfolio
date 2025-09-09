@@ -14,6 +14,12 @@
                     (componentLoaded)="onComponentLoaded('about')"></app-lazy-load>
     </section>
 
+    <section id="skills" class="scroll-animation">
+      <app-lazy-load [component]="skillsComponent" [sectionId]="'skills'"
+                    #skillsLazy
+                    (componentLoaded)="onComponentLoaded('skills')"></app-lazy-load>
+    </section>
+
     <section id="projects" class="scroll-animation">
       <app-lazy-load [component]="projectsComponent" [sectionId]="'projects'"
                     #projectsLazy
