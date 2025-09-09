@@ -1,18 +1,24 @@
-<section id="about" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 scroll-animation">
+<!-- about.component.html -->
+<section id="about" class="py-20 bg-white dark:bg-gray-900">
   <div class="container mx-auto px-4 max-w-6xl">
     <!-- Header Section -->
     <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">{{ aboutData.title }}</h2>
-      <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">{{ aboutData.subtitle }}</p>
-      <div class="w-16 h-1 bg-gradient-to-r from-primary to-primary-dark dark:from-primary-dark dark:to-primary-dark mx-auto rounded"></div>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        {{ aboutData.title }}
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
+        {{ aboutData.subtitle }}
+      </p>
     </div>
 
-    <div class="about-content">
-
-      <!-- Detailed Description -->
-      <div class="mb-16">
-        <div class="mb-10">
-          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">{{ t('about.storyTitle') }}</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Columna izquierda: Descripción y Stats -->
+      <div>
+        <!-- Descripción detallada -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            {{ t('about.storyTitle') }}
+          </h3>
           <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
             {{ aboutData.longDescription }}
           </p>
@@ -21,37 +27,93 @@
           </p>
         </div>
 
-        <!-- Stats -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div *ngFor="let stat of aboutData.stats" class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl">
-            <div class="text-3xl font-bold text-primary dark:text-primary-light mb-2">{{ stat.number }}</div>
-            <div class="text-gray-600 dark:text-gray-300">{{ stat.label }}</div>
-          </div>
-        </div>
-
-        <!-- Features -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          <div *ngFor="let feature of aboutData.features" class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl text-center md:text-left transition-transform duration-300 hover:-translate-y-1">
-            <div class="text-4xl mb-4">{{ feature.icon }}</div>
-            <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ feature.title }}</h4>
-            <p class="text-gray-600 dark:text-gray-300">{{ feature.description }}</p>
+        <!-- Stats DETALLADAS -->
+        <div class="grid grid-cols-2 gap-6 mb-8">
+          <div *ngFor="let stat of aboutData.stats"
+               class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+            <div class="text-3xl font-bold text-primary dark:text-primary-light mb-2">
+              {{ stat.number }}
+            </div>
+            <div class="text-gray-600 dark:text-gray-300 text-sm">
+              {{ stat.label }}
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Call to Action -->
-      <div class="bg-gradient-to-br from-primary to-primary-dark dark:from-primary-dark dark:to-primary-dark p-8 md:p-12 rounded-2xl text-center text-white">
-        <div class="max-w-2xl mx-auto">
-          <h3 class="text-3xl font-bold mb-4">{{ t('about.cta.title') }}</h3>
-          <p class="text-lg opacity-90 mb-8">{{ t('about.cta.subtitle') }}</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-opacity-90 hover:-translate-y-0.5">
-              {{ t('about.cta.contact') }}
-            </a>
-            <a href="#projects" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-primary hover:-translate-y-0.5">
-              {{ t('about.cta.viewProjects') }}
-            </a>
+      <!-- Columna derecha: Experiencia -->
+      <div>
+        <!-- Experiencia Profesional -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+            Experiencia Profesional
+          </h3>
+          <div class="space-y-6">
+            <div *ngFor="let exp of aboutData.experience"
+                 class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl">
+              <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                {{ exp.title }}
+              </h4>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                {{ exp.period }}
+              </p>
+              <p class="text-gray-600 dark:text-gray-300 mb-3">
+                {{ exp.description }}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span *ngFor="let tech of exp.technologies"
+                      class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded-full">
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Educación -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+            {{ aboutData.education.title }}
+          </h3>
+          <div class="space-y-4">
+            <div *ngFor="let edu of aboutData.education.items"
+                 class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl">
+              <h4 class="font-semibold text-gray-900 dark:text-white">
+                {{ edu.degree }}
+              </h4>
+              <p class="text-gray-600 dark:text-gray-300">{{ edu.university }}</p>
+              <p *ngIf="edu.license" class="text-sm text-gray-500 dark:text-gray-400">
+                {{ edu.license }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features y CTA (al final) -->
+    <div class="mt-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div *ngFor="let feature of aboutData.features"
+             class="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl text-center">
+          <div class="text-4xl mb-4">{{ feature.icon }}</div>
+          <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            {{ feature.title }}
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300">{{ feature.description }}</p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-primary to-primary-dark p-8 rounded-2xl text-center text-white">
+        <h3 class="text-3xl font-bold mb-4">{{ t('about.cta.title') }}</h3>
+        <p class="text-lg opacity-90 mb-8">{{ t('about.cta.subtitle') }}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold">
+            {{ t('about.cta.contact') }}
+          </a>
+          <a href="#projects" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold">
+            {{ t('about.cta.viewProjects') }}
+          </a>
         </div>
       </div>
     </div>

@@ -9,10 +9,9 @@ export class I18nService {
   private translations: any = {
     es: {
       header: {
-        logo: 'MiPortafolio',
+        logo: 'EdgarTorres',
         home: 'Inicio',
         about: 'Sobre mí',
-        skills: 'Habilidades',
         projects: 'Proyectos',
         contact: 'Contacto',
         toggleDark: 'Cambiar a modo oscuro',
@@ -22,8 +21,8 @@ export class I18nService {
       },
       hero: {
         title: 'Hola, soy',
-        subtitle: 'Desarrollador Frontend',
-        description: 'Especializado en crear experiencias web excepcionales...',
+        subtitle: 'Desarrollador de Software',
+        description: 'Especializado en .NET, Angular, VueJS y desarrollo en AWS con más de 3 años de experiencia',
         btnProjects: 'Ver proyectos',
         btnContact: 'Contactar',
         experience: 'Años de experiencia',
@@ -36,16 +35,15 @@ export class I18nService {
         infoTitle: 'Información de Contacto',
         infoDescription: '¿Tienes un proyecto en mente? No dudes en contactarme. Estoy disponible para freelance y oportunidades a tiempo completo.',
         details: [
-          { icon: '📧', title: 'Email', value: 'tu.email@ejemplo.com' },
-          { icon: '📱', title: 'Teléfono', value: '+1 (234) 567-8901' },
-          { icon: '📍', title: 'Ubicación', value: 'Ciudad, País' }
+          { icon: '📧', title: 'Email', value: 'eath2497@gmail.com' },
+          { icon: '📱', title: 'Teléfono', value: '+52 998 407 5027' },
+          { icon: '📍', title: 'Ubicación', value: 'Cancún, Q. Roo, México' },
+          { icon: '🌐', title: 'Website', value: 'edgartorres.dev' }
         ],
-        socialTitle: 'Sígueme en',
+        socialTitle: 'Conectemos en',
         socials: [
-          { name: 'GitHub', icon: '🐙', link: 'https://github.com/tuusuario' },
-          { name: 'LinkedIn', icon: '💼', link: 'https://linkedin.com/in/tuusuario' },
-          { name: 'Twitter', icon: '🐦', link: 'https://twitter.com/tuusuario' },
-          { name: 'Instagram', icon: '📸', link: 'https://instagram.com/tuusuario' }
+          { name: 'GitHub', icon: '🐙', link: 'https://github.com/EdgarTorreshdz' },
+          { name: 'LinkedIn', icon: '💼', link: 'https://linkedin.com/in/edgar-antonio-torres-hernández-55942519b' }
         ],
         form: {
           name: 'Nombre completo',
@@ -64,49 +62,91 @@ export class I18nService {
       },
       projects: {
         title: 'Mis Proyectos',
-        description: 'Explora algunos de mis trabajos recientes. Cada proyecto representa un desafío único y una oportunidad para aprender y crecer como desarrollador.',
+        description: 'Explora algunos de mis trabajos recientes. Especializado en aplicaciones administrativas, microservicios y soluciones full-stack.',
         categories: {
           todos: 'Todos',
           frontend: 'Frontend',
           backend: 'Backend',
           fullstack: 'Fullstack',
-          mobile: 'Mobile'
+          microservices: 'Microservicios',
+          aws: 'AWS'
         },
         code: 'Código',
         demo: 'Ver Demo',
         emptyTitle: 'No hay proyectos en esta categoría',
         emptyDescription: 'Prueba seleccionando otra categoría para ver más proyectos.'
       },
-        skills: {
+      skills: {
         title: 'Mis Habilidades',
         technical: 'Habilidades Técnicas',
         soft: 'Habilidades Blandas',
+        languages: 'Lenguajes',
+        frameworks: 'Frameworks',
+        databases: 'Bases de Datos',
+        cloud: 'Cloud & DevOps',
+        tools: 'Herramientas',
         teamwork: 'Trabajo en equipo',
         problemSolving: 'Resolución de problemas',
         communication: 'Comunicación',
         timeManagement: 'Gestión de tiempo',
-        creativity: 'Creatividad'
+        creativity: 'Creatividad',
+        agile: 'Metodologías Ágiles'
       },
       about: {
         title: 'Sobre Mí',
-        subtitle: 'Desarrollador Frontend Apasionado',
-        description: 'Soy un desarrollador frontend con más de 2 años de experiencia creando aplicaciones web modernas y responsivas. Me especializo en Angular, TypeScript y Tailwind CSS.',
-        longDescription: 'Mi pasión por el desarrollo web comenzó cuando creé mi primera página web. Desde entonces, he estado constantemente aprendiendo y mejorando mis habilidades. Disfruto transformar ideas complejas en interfaces intuitivas y elegantes.',
-        storyTitle: 'Mi Historia',
+        subtitle: 'Desarrollador de Software Full-Stack',
+        description: 'Soy un desarrollador con más de 3 años de experiencia en .NET, Angular, VueJS, Laravel y AWS. Especializado en la creación de microservicios, aplicaciones administrativas y soluciones full-stack.',
+        longDescription: 'Mi pasión por el desarrollo de software comenzó cuando creé mi primera aplicación. Desde entonces, he estado constantemente aprendiendo y mejorando mis habilidades. Disfruto transformando ideas complejas en soluciones escalables y eficientes.',
+        storyTitle: 'Mi Experiencia Profesional',
         passionStatement: 'Me encanta trabajar en proyectos desafiantes que me permitan crecer profesionalmente y aportar valor a través de soluciones innovadoras.',
         stats: {
           experience: 'Años de experiencia',
           projects: 'Proyectos completados',
-          clients: 'Clientes satisfechos'
+          clients: 'Clientes satisfechos',
+          technologies: 'Tecnologías dominadas'
+        },
+        experience: {
+          go1: {
+            title: '.NET Developer - Go1 Technologies/PriceTravel',
+            period: 'Agosto 2023 - Presente',
+            description: 'Desarrollo de aplicaciones administrativas usando .NET, Angular, AWS, SQL y NoSQL. Desarrollo e implementación de microservicios.'
+          },
+          ultra: {
+            title: '.NET Jr Developer - Grupo Ultra',
+            period: 'Junio 2022 - Julio 2023',
+            description: 'Desarrollo de aplicaciones y sistemas punto de venta usando .NET, Nuxt, VueJS y SQL.'
+          },
+          novusred: {
+            title: 'Fullstack Developer - Novusred',
+            period: 'Noviembre 2021 - Junio 2022',
+            description: 'Desarrollo y mantenimiento de tienda online con Laravel, PHP, VueJS, SQL y AWS.'
+          },
+          ozelot: {
+            title: '.NET Developer Intern - Ozelot Technologies',
+            period: 'Mayo 2020 - Agosto 2020',
+            description: 'Desarrollo de features en .NET y VueJS.'
+          }
+        },
+        education: {
+          title: 'Educación',
+          degree: 'Licenciatura en Desarrollo y Gestión de Software',
+          university: 'Universidad Tecnológica de Cancún',
+          license: 'Cédula Profesional: 14681724',
+          tsu: 'TSU. Desarrollo de Software Multiplataforma'
+        },
+        languages: {
+          title: 'Idiomas',
+          spanish: 'Español: Nativo',
+          english: 'Inglés: Intermedio - Avanzado'
         },
         features: {
           performance: {
             title: 'Rendimiento',
             description: 'Aplicaciones optimizadas y de alto rendimiento'
           },
-          responsive: {
-            title: 'Responsive',
-            description: 'Diseños que se adaptan a todos los dispositivos'
+          scalable: {
+            title: 'Escalable',
+            description: 'Soluciones escalables y mantenibles'
           },
           modern: {
             title: 'Moderno',
@@ -122,8 +162,8 @@ export class I18nService {
       },
       footer: {
         brand: {
-          name: 'Mi Portafolio',
-          description: 'Desarrollador Frontend especializado en crear experiencias web excepcionales con Angular y Tailwind CSS.'
+          name: 'Edgar Torres',
+          description: 'Desarrollador de Software especializado en .NET, Angular, VueJS y AWS con más de 3 años de experiencia.'
         },
         links: {
           title: 'Enlaces Rápidos',
@@ -138,11 +178,12 @@ export class I18nService {
         },
         contact: {
           title: 'Contacto',
-          email: 'tu.email@ejemplo.com',
-          phone: '+123 456 7890',
-          location: 'Ciudad, País'
+          email: 'eath2497@gmail.com',
+          phone: '+52 998 407 5027',
+          location: 'Cancún, Q. Roo, México',
+          website: 'edgartorres.dev'
         },
-        copyright: '© {year} Mi Portafolio. Todos los derechos reservados.',
+        copyright: '© {year} Edgar Torres. Todos los derechos reservados.',
         legal: {
           privacy: 'Política de Privacidad',
           terms: 'Términos de Servicio'
@@ -151,10 +192,9 @@ export class I18nService {
     },
     en: {
       header: {
-        logo: 'MyPortfolio',
+        logo: 'EdgarTorres',
         home: 'Home',
         about: 'About',
-        skills: 'Skills',
         projects: 'Projects',
         contact: 'Contact',
         toggleDark: 'Switch to dark mode',
@@ -164,8 +204,8 @@ export class I18nService {
       },
       hero: {
         title: 'Hi, I am',
-        subtitle: 'Frontend Developer',
-        description: 'Specialized in creating exceptional web experiences...',
+        subtitle: 'Software Developer',
+        description: 'Specialized in .NET, Angular, VueJS and AWS development with over 3 years of experience',
         btnProjects: 'View projects',
         btnContact: 'Contact',
         experience: 'Years of experience',
@@ -178,16 +218,15 @@ export class I18nService {
         infoTitle: 'Contact Information',
         infoDescription: 'Do you have a project in mind? Feel free to contact me. I am available for freelance and full-time opportunities.',
         details: [
-          { icon: '📧', title: 'Email', value: 'your.email@example.com' },
-          { icon: '📱', title: 'Phone', value: '+1 (234) 567-8901' },
-          { icon: '📍', title: 'Location', value: 'City, Country' }
+          { icon: '📧', title: 'Email', value: 'eath2497@gmail.com' },
+          { icon: '📱', title: 'Phone', value: '+52 998 407 5027' },
+          { icon: '📍', title: 'Location', value: 'Cancun, Q. Roo, Mexico' },
+          { icon: '🌐', title: 'Website', value: 'edgartorres.dev' }
         ],
-        socialTitle: 'Follow me on',
+        socialTitle: 'Connect with me on',
         socials: [
-          { name: 'GitHub', icon: '🐙', link: 'https://github.com/yourusername' },
-          { name: 'LinkedIn', icon: '💼', link: 'https://linkedin.com/in/yourusername' },
-          { name: 'Twitter', icon: '🐦', link: 'https://twitter.com/yourusername' },
-          { name: 'Instagram', icon: '📸', link: 'https://instagram.com/yourusername' }
+          { name: 'GitHub', icon: '🐙', link: 'https://github.com/EdgarTorreshdz' },
+          { name: 'LinkedIn', icon: '💼', link: 'https://linkedin.com/in/edgar-antonio-torres-hernández-55942519b' }
         ],
         form: {
           name: 'Full name',
@@ -206,13 +245,14 @@ export class I18nService {
       },
       projects: {
         title: 'My Projects',
-        description: 'Explore some of my recent work. Each project represents a unique challenge and an opportunity to learn and grow as a developer.',
+        description: 'Explore some of my recent work. Specialized in administrative applications, microservices and full-stack solutions.',
         categories: {
           todos: 'All',
           frontend: 'Frontend',
           backend: 'Backend',
           fullstack: 'Fullstack',
-          mobile: 'Mobile'
+          microservices: 'Microservices',
+          aws: 'AWS'
         },
         code: 'Code',
         demo: 'View Demo',
@@ -223,32 +263,73 @@ export class I18nService {
         title: 'My Skills',
         technical: 'Technical Skills',
         soft: 'Soft Skills',
+        languages: 'Languages',
+        frameworks: 'Frameworks',
+        databases: 'Databases',
+        cloud: 'Cloud & DevOps',
+        tools: 'Tools',
         teamwork: 'Teamwork',
         problemSolving: 'Problem Solving',
         communication: 'Communication',
         timeManagement: 'Time Management',
-        creativity: 'Creativity'
+        creativity: 'Creativity',
+        agile: 'Agile Methodologies'
       },
       about: {
         title: 'About Me',
-        subtitle: 'Passionate Frontend Developer',
-        description: 'I am a frontend developer with over 2 years of experience creating modern and responsive web applications. I specialize in Angular, TypeScript and Tailwind CSS.',
-        longDescription: 'My passion for web development began when I created my first website. Since then, I have been constantly learning and improving my skills. I enjoy transforming complex ideas into intuitive and elegant interfaces.',
-        storyTitle: 'My Story',
+        subtitle: 'Full-Stack Software Developer',
+        description: 'I am a developer with over 3 years of experience in .NET, Angular, VueJS, Laravel and AWS. Specialized in creating microservices, administrative applications and full-stack solutions.',
+        longDescription: 'My passion for software development began when I created my first application. Since then, I have been constantly learning and improving my skills. I enjoy transforming complex ideas into scalable and efficient solutions.',
+        storyTitle: 'Professional Experience',
         passionStatement: 'I love working on challenging projects that allow me to grow professionally and add value through innovative solutions.',
         stats: {
           experience: 'Years of experience',
           projects: 'Completed projects',
-          clients: 'Satisfied clients'
+          clients: 'Satisfied clients',
+          technologies: 'Mastered technologies'
+        },
+        experience: {
+          go1: {
+            title: '.NET Developer - Go1 Technologies/PriceTravel',
+            period: 'August 2023 - Present',
+            description: 'Development of administrative applications using .NET, Angular, AWS, SQL and NoSQL. Development and implementation of microservices.'
+          },
+          ultra: {
+            title: '.NET Jr Developer - Grupo Ultra',
+            period: 'June 2022 - July 2023',
+            description: 'Development of applications and point-of-sale systems using .NET, Nuxt, VueJS and SQL.'
+          },
+          novusred: {
+            title: 'Fullstack Developer - Novusred',
+            period: 'November 2021 - June 2022',
+            description: 'Development and maintenance of online store with Laravel, PHP, VueJS, SQL and AWS.'
+          },
+          ozelot: {
+            title: '.NET Developer Intern - Ozelot Technologies',
+            period: 'May 2020 - August 2020',
+            description: 'Development of features in .NET and VueJS.'
+          }
+        },
+        education: {
+          title: 'Education',
+          degree: 'Bachelor\'s Degree in Software Development and Management',
+          university: 'Universidad Tecnológica de Cancún',
+          license: 'Professional License: 14681724',
+          tsu: 'TSU. Multiplatform Software Development'
+        },
+        languages: {
+          title: 'Languages',
+          spanish: 'Spanish: Native',
+          english: 'English: Intermediate - Advanced'
         },
         features: {
           performance: {
             title: 'Performance',
             description: 'Optimized and high-performance applications'
           },
-          responsive: {
-            title: 'Responsive',
-            description: 'Designs that adapt to all devices'
+          scalable: {
+            title: 'Scalable',
+            description: 'Scalable and maintainable solutions'
           },
           modern: {
             title: 'Modern',
@@ -264,8 +345,8 @@ export class I18nService {
       },
       footer: {
         brand: {
-          name: 'My Portfolio',
-          description: 'Frontend Developer specialized in creating exceptional web experiences with Angular and Tailwind CSS.'
+          name: 'Edgar Torres',
+          description: 'Software Developer specialized in .NET, Angular, VueJS and AWS with over 3 years of experience.'
         },
         links: {
           title: 'Quick Links',
@@ -280,11 +361,12 @@ export class I18nService {
         },
         contact: {
           title: 'Contact',
-          email: 'your.email@example.com',
-          phone: '+123 456 7890',
-          location: 'City, Country'
+          email: 'eath2497@gmail.com',
+          phone: '+52 998 407 5027',
+          location: 'Cancun, Q. Roo, Mexico',
+          website: 'edgartorres.dev'
         },
-        copyright: '© {year} My Portfolio. All rights reserved.',
+        copyright: '© {year} Edgar Torres. All rights reserved.',
         legal: {
           privacy: 'Privacy Policy',
           terms: 'Terms of Service'

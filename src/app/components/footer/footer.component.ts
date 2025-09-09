@@ -18,23 +18,13 @@ export class FooterComponent {
   socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/tuusuario',
+      url: 'https://github.com/EdgarTorreshdz',
       icon: 'github'
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/tuusuario',
+      url: 'https://linkedin.com/in/edgar-antonio-torres-hernández-55942519b',
       icon: 'linkedin'
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/tuusuario',
-      icon: 'twitter'
-    },
-    {
-      name: 'Instagram',
-      url: 'https://instagram.com/tuusuario',
-      icon: 'instagram'
     }
   ];
 
@@ -50,12 +40,18 @@ export class FooterComponent {
   }
 
   technologies = [
-    'Angular 19',
+    '.NET Framework',
+    'C#',
+    'Angular',
     'TypeScript',
-    'Tailwind CSS',
-    'RxJS',
-    'HTML5/CSS3',
-    'JavaScript ES6+'
+    'JavaScript',
+    'PHP',
+    'Laravel',
+    'SQL Server',
+    'MySQL',
+    'AWS',
+    'Azure',
+    'Node.js'
   ];
 
   scrollToSection(sectionId: string, event: Event) {

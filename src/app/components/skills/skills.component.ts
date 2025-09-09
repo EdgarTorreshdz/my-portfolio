@@ -19,12 +19,45 @@ interface Skill {
 })
 export class SkillsComponent implements OnInit, OnDestroy {
   technicalSkills: Skill[] = [
-    { name: 'Angular', percentage: 90, color: 'primary' },
+    { name: '.NET', percentage: 90, color: 'primary' },
+    { name: 'C#', percentage: 88, color: 'primary' },
+    { name: 'Angular', percentage: 85, color: 'primary' },
     { name: 'TypeScript', percentage: 85, color: 'primary' },
-    { name: 'JavaScript', percentage: 80, color: 'primary' },
-    { name: 'HTML/CSS', percentage: 95, color: 'primary' },
-    { name: 'Tailwind CSS', percentage: 85, color: 'primary' },
-    { name: 'Node.js', percentage: 75, color: 'primary' }
+    { name: 'JavaScript', percentage: 88, color: 'primary' },
+    { name: 'PHP', percentage: 75, color: 'primary' },
+    { name: 'Laravel', percentage: 70, color: 'primary' },
+    { name: 'SQL/MySQL', percentage: 85, color: 'primary' },
+    { name: 'AWS', percentage: 75, color: 'primary' },
+    { name: 'Azure', percentage: 70, color: 'primary' },
+    { name: 'Node.js', percentage: 75, color: 'primary' },
+    { name: 'Express.js', percentage: 70, color: 'primary' }
+  ];
+
+  // Habilidades por categorías
+  languagesSkills: Skill[] = [
+    { name: 'C#', percentage: 88, color: 'accent' },
+    { name: 'TypeScript', percentage: 85, color: 'accent' },
+    { name: 'JavaScript', percentage: 88, color: 'accent' },
+    { name: 'PHP', percentage: 75, color: 'accent' }
+  ];
+
+  frameworksSkills: Skill[] = [
+    { name: '.NET', percentage: 90, color: 'primary' },
+    { name: 'Angular', percentage: 85, color: 'primary' },
+    { name: 'Laravel', percentage: 70, color: 'primary' },
+    { name: 'Node.js', percentage: 75, color: 'primary' },
+    { name: 'Express.js', percentage: 70, color: 'primary' }
+  ];
+
+  databasesSkills: Skill[] = [
+    { name: 'SQL Server', percentage: 85, color: 'secondary' },
+    { name: 'MySQL', percentage: 80, color: 'secondary' },
+  ];
+
+  cloudSkills: Skill[] = [
+    { name: 'AWS', percentage: 75, color: 'warning' },
+    { name: 'Azure', percentage: 70, color: 'warning' },
+    { name: 'Vercel', percentage: 65, color: 'warning' }
   ];
 
   softSkills: Skill[] = [];
@@ -51,14 +84,20 @@ export class SkillsComponent implements OnInit, OnDestroy {
   private updateSoftSkills(): void {
     this.softSkills = [
       { name: this.t('skills.teamwork'), percentage: 90, color: 'secondary' },
-      { name: this.t('skills.problemSolving'), percentage: 85, color: 'secondary' },
-      { name: this.t('skills.communication'), percentage: 80, color: 'secondary' },
-      { name: this.t('skills.timeManagement'), percentage: 75, color: 'secondary' },
-      { name: this.t('skills.creativity'), percentage: 85, color: 'secondary' }
+      { name: this.t('skills.problemSolving'), percentage: 88, color: 'secondary' },
+      { name: this.t('skills.communication'), percentage: 85, color: 'secondary' },
+      { name: this.t('skills.timeManagement'), percentage: 82, color: 'secondary' },
+      { name: this.t('skills.creativity'), percentage: 85, color: 'secondary' },
+      { name: this.t('skills.agile'), percentage: 80, color: 'secondary' }
     ];
   }
 
   t(key: string): string {
     return this.i18n.t(key);
+  }
+
+  // Método para obtener el nombre de la categoría traducida
+  getCategoryTitle(category: string): string {
+    return this.t(`skills.${category}`);
   }
 }
