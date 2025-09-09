@@ -1,0 +1,350 @@
+// Variables
+$primary: #3b82f6;
+$primary-dark: #2563eb;
+$secondary: #f7a82f;
+$text-dark: #1f2937;
+$text-light: #f3f4f6;
+$bg-light: #ffffff;
+$bg-dark: #111827;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+
+// Mixins
+@mixin transition($property: all, $duration: 200ms, $easing: ease-in-out) {
+  transition: $property $duration $easing;
+}
+
+@mixin responsive($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// About Styles
+.about {
+  padding: 5rem 0;
+  background: $bg-light;
+
+  .dark & {
+    background: $bg-dark;
+  }
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Header
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $text-dark;
+  margin-bottom: 0.5rem;
+
+  .dark & {
+    color: $text-light;
+  }
+
+  @include responsive(768px) {
+    font-size: 3rem;
+  }
+}
+
+.about-subtitle {
+  font-size: 1.25rem;
+  color: $gray-600;
+  margin-bottom: 1.5rem;
+
+  .dark & {
+    color: $gray-300;
+  }
+}
+
+.about-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+// Profile Section
+.about-profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+
+  @include responsive(1024px) {
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+    gap: 3rem;
+  }
+}
+
+.about-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  position: relative;
+}
+
+.image-placeholder {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  .dark & {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-basic-info {
+  text-align: center;
+
+  @include responsive(1024px) {
+    text-align: left;
+  }
+}
+
+.about-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: $text-dark;
+  margin-bottom: 0.5rem;
+
+  .dark & {
+    color: $text-light;
+  }
+}
+
+.about-role {
+  font-size: 1.25rem;
+  color: $primary;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.about-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: $gray-600;
+  margin-bottom: 2rem;
+
+  .dark & {
+    color: $gray-300;
+  }
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.about-stat {
+  text-align: center;
+  padding: 1rem;
+  background: $gray-100;
+  border-radius: 12px;
+
+  .dark & {
+    background: $gray-800;
+  }
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $primary;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: $gray-600;
+  font-weight: 500;
+
+  .dark & {
+    color: $gray-300;
+  }
+}
+
+// Details Section
+.about-details {
+  margin-bottom: 4rem;
+}
+
+.details-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 1rem;
+
+  .dark & {
+    color: $text-light;
+  }
+}
+
+.details-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: $gray-600;
+  margin-bottom: 1.5rem;
+
+  .dark & {
+    color: $gray-300;
+  }
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+
+  @include responsive(768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: $gray-100;
+  border-radius: 16px;
+  @include transition(transform);
+
+  .dark & {
+    background: $gray-800;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  @include responsive(768px) {
+    text-align: left;
+  }
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 0.5rem;
+
+  .dark & {
+    color: $text-light;
+  }
+}
+
+.feature-description {
+  color: $gray-600;
+  line-height: 1.6;
+
+  .dark & {
+    color: $gray-300;
+  }
+}
+
+
+// CTA Section
+.about-cta {
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  @include transition(all);
+
+  &--primary {
+    background: white;
+    color: $primary;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-2px);
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+
+    &:hover {
+      background: white;
+      color: $primary;
+      transform: translateY(-2px);
+    }
+  }
+}

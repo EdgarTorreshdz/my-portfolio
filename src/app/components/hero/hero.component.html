@@ -1,0 +1,50 @@
+<section id="hero" class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <!-- Text Content -->
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="hero-greeting">{{ heroData.title }}</span>
+          <span class="hero-name">{{ heroData.name }}</span>
+        </h1>
+
+        <h2 class="hero-subtitle">{{ heroData.subtitle }}</h2>
+
+        <p class="hero-description">
+          {{ heroData.description }}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+          <a
+            *ngFor="let button of heroData.ctaButtons"
+            [href]="button.href"
+            class="hero-button"
+            [class]="'hero-button--' + button.variant"
+          >
+            {{ button.text }}
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div *ngFor="let stat of heroData.stats" class="hero-stat">
+            <span class="hero-stat-number">{{ stat.number }}</span>
+            <span class="hero-stat-label">{{ stat.label }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image/Illustration -->
+      <div class="hero-visual">
+        <div class="hero-image">
+          <div class="placeholder-image">
+            <svg class="placeholder-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<div class="min-h-screen bg-white dark:bg-gray-900">
+  <app-header></app-header>
+  <main>
+    <!-- Hero se carga inmediatamente -->
+    <section id="hero">
+      <app-hero></app-hero>
+    </section>
+
+    <!-- Demás componentes se cargan con lazy loading -->
+    <section id="about">
+      <app-lazy-load [component]="aboutComponent"></app-lazy-load>
+    </section>
+
+    <section id="skills">
+      <app-lazy-load [component]="skillsComponent"></app-lazy-load>
+    </section>
+
+    <section id="projects">
+      <app-lazy-load [component]="projectsComponent"></app-lazy-load>
+    </section>
+
+    <section id="contact">
+      <app-lazy-load [component]="contactComponent"></app-lazy-load>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</div>

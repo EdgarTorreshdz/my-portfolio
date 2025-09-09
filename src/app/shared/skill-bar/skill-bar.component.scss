@@ -1,0 +1,137 @@
+:host {
+  display: block;
+}
+
+// Variables para modo oscuro
+:host {
+  --card-bg-light: theme('colors.gray.50');
+  --card-bg-dark: theme('colors.gray.800');
+  --text-light: theme('colors.gray.700');
+  --text-dark: theme('colors.gray.400');
+  --shadow-light: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+// Animaciones para las barras de progreso
+.skill-progress {
+  transition: width 1s ease-in-out;
+}
+
+// Efectos hover para las tarjetas de características
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: var(--card-bg-light);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-light);
+  }
+}
+
+// Efectos hover para los botones
+.cta-button {
+  transition: all 0.3s ease;
+
+  &--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 77, 144, 0.2);
+  }
+
+  &--secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Modo oscuro
+.dark {
+  .feature-card {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      box-shadow: var(--shadow-dark);
+      background-color: theme('colors.gray.750');
+    }
+  }
+
+  // Mejoras específicas para modo oscuro
+  .about-description,
+  .details-description {
+    color: theme('colors.gray.300');
+  }
+
+  .stat-label {
+    color: theme('colors.gray.400');
+  }
+
+  // Transiciones suaves para todos los elementos
+  * {
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+// Clase de utilidad para transiciones
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Animaciones para elementos que aparecen
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+// Para elementos que se revelan al hacer scroll
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

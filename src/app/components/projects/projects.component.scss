@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+
+// Animaciones para las tarjetas de proyectos
+.project-card {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+// Estilos para el modo oscuro
+.dark {
+  .project-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    &:hover {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// Ajustes responsivos
+@media (max-width: 768px) {
+  .category-filters {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+  }
+
+  .dark {
+    .category-filters {
+      &::-webkit-scrollbar-track {
+        background: #374151;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #6b7280;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #9ca3af;
+      }
+    }
+  }
+}

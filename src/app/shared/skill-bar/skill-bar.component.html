@@ -1,0 +1,18 @@
+<div class="skill-item mb-4">
+  <div class="flex justify-between items-center mb-1">
+    <span class="text-sm font-medium text-gray-800 dark:text-gray-200">{{ skillName }}</span>
+    <span class="text-xs text-gray-600 dark:text-gray-400">{{ percentage }}%</span>
+  </div>
+  <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+    <div
+      class="h-2.5 rounded-full transition-all duration-1000 ease-out"
+      [ngClass]="{
+        'bg-primary': color === 'primary',
+        'bg-secondary': color === 'secondary',
+        'w-0': !isVisible,
+        'animate-grow': isVisible
+      }"
+      [style.width.%]="isVisible ? percentage : 0">
+    </div>
+  </div>
+</div>

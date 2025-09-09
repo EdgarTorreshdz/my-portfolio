@@ -1,0 +1,295 @@
+// Variables
+$primary: #2D4D90;
+$primary-dark: #1E3A8A;
+$secondary: #F7A82F;
+$text-dark: #1f2937;
+$text-light: #f3f4f6;
+$bg-gradient: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+$bg-gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+
+// Mixins
+@mixin transition($property: all, $duration: 200ms, $easing: ease-in-out) {
+  transition: $property $duration $easing;
+}
+
+@mixin responsive($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Hero Styles
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  background: $bg-gradient;
+
+  @apply dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800; // Clases de Tailwind para dark mode
+
+  .dark & {
+    background: $bg-gradient-dark;
+  }
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @apply container mx-auto px-4 max-w-6xl; // Clases de Tailwind
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-12 items-center; // Clases de Tailwind
+
+  @include responsive(1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+// Text Content
+.hero-text {
+  order: 2;
+
+  @apply order-2 lg:order-1; // Clases de Tailwind
+
+  @include responsive(1024px) {
+    order: 1;
+  }
+}
+
+.hero-title {
+  margin-bottom: 1rem;
+}
+
+.hero-greeting {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 0.5rem;
+
+  @apply text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-2; // Clases de Tailwind
+
+  .dark & {
+    color: $text-light;
+  }
+
+  @include responsive(768px) {
+    font-size: 2rem;
+  }
+}
+
+.hero-name {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent mb-4; // Clases de Tailwind
+
+  @include responsive(768px) {
+    font-size: 3.5rem;
+  }
+
+  @include responsive(1024px) {
+    font-size: 4rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 1.5rem;
+
+  @apply text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6; // Clases de Tailwind
+
+  .dark & {
+    color: $text-light;
+  }
+
+  @include responsive(768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+
+  @apply text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-md; // Clases de Tailwind
+
+  .dark & {
+    color: #d1d5db;
+  }
+}
+
+// CTA Buttons
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+
+  @apply flex flex-wrap gap-4 mb-10; // Clases de Tailwind
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  @include transition(all);
+
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1; // Clases de Tailwind
+
+  &--primary {
+    background: $primary;
+    color: white;
+    border: 2px solid $primary;
+
+    @apply bg-primary text-white hover:bg-primary-dark; // Clases de Tailwind
+
+    &:hover {
+      background: $primary-dark;
+      border-color: $primary-dark;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $primary;
+    border: 2px solid $primary;
+
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white; // Clases de Tailwind
+
+    &:hover {
+      background: $primary;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Stats
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @apply grid grid-cols-3 gap-6; // Clases de Tailwind
+}
+
+.hero-stat {
+  text-align: center;
+
+  @apply text-center md:text-left; // Clases de Tailwind
+
+  @include responsive(640px) {
+    text-align: left;
+  }
+}
+
+.hero-stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: $primary;
+  margin-bottom: 0.25rem;
+
+  @apply block text-3xl font-bold text-primary dark:text-primary-dark mb-1; // Clases de Tailwind
+}
+
+.hero-stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+
+  @apply block text-sm text-gray-600 dark:text-gray-300 font-medium; // Clases de Tailwind
+
+  .dark & {
+    color: #d1d5db;
+  }
+}
+
+// Visual Section
+.hero-visual {
+  order: 1;
+  display: flex;
+  justify-content: center;
+
+  @apply order-1 lg:order-2 flex justify-center lg:justify-end; // Clases de Tailwind
+
+  @include responsive(1024px) {
+    order: 2;
+    justify-content: flex-end;
+  }
+}
+
+.hero-image {
+  position: relative;
+}
+
+.placeholder-image {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  @apply w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white; // Clases de Tailwind
+
+  @include responsive(640px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @include responsive(1024px) {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+.placeholder-icon {
+  width: 40%;
+  height: 40%;
+  opacity: 0.8;
+
+  @apply w-1/3 h-1/3 opacity-80; // Clases de Tailwind
+}
+
+// Animaciones para elementos que aparecen
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

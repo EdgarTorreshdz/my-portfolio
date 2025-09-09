@@ -1,0 +1,85 @@
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Main Footer Content -->
+    <div class="footer-grid">
+
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <h3 class="footer-title">Mi Portafolio</h3>
+        <p class="footer-description">
+          Desarrollador Frontend especializado en crear experiencias web excepcionales con Angular y Tailwind CSS.
+        </p>
+        <div class="social-links">
+          <a
+            *ngFor="let social of socialLinks"
+            [href]="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            [class]="'social-link--' + social.icon"
+            [attr.aria-label]="social.name"
+          >
+            <span class="sr-only">{{ social.name }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Enlaces Rápidos</h4>
+        <ul class="footer-links">
+          <li *ngFor="let link of quickLinks">
+            <a
+              [routerLink]="link.route"
+              class="footer-link"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Technologies -->
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Tecnologías</h4>
+        <ul class="footer-tech">
+          <li *ngFor="let tech of technologies" class="footer-tech-item">
+            {{ tech }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Contacto</h4>
+        <div class="contact-info">
+          <p class="contact-item">
+            <span class="contact-icon">📧</span>
+            tu.emailejemplo.com
+          </p>
+          <p class="contact-item">
+            <span class="contact-icon">📞</span>
+            +123 456 7890
+          </p>
+          <p class="contact-item">
+            <span class="contact-icon">📍</span>
+            Ciudad, País
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="footer-copyright">
+          © {{ currentYear }} Mi Portafolio. Todos los derechos reservados.
+        </p>
+        <div class="footer-legal">
+          <a href="#" class="footer-legal-link">Política de Privacidad</a>
+          <a href="#" class="footer-legal-link">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
