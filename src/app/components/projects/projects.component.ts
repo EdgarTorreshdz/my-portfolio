@@ -1,22 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  imageUrl: string;
-  projectUrl?: string;
-  githubUrl?: string;
-  category: string;
-}
+import { I18nService } from '../../shared/i18n.service';
+import { ProjectCardComponent } from '../../shared/project-card/project-card.component';
+import { Project } from '../../models/project';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProjectCardComponent],
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
@@ -25,11 +17,10 @@ export class ProjectsComponent implements OnInit {
   categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack', 'Mobile'];
   selectedCategory: string = 'Todos';
 
-  constructor() { }
+  constructor(public i18n: I18nService) { }
 
   ngOnInit(): void {
     console.log('Projects iniciando');
-
     this.loadProjects();
     this.filterProjects();
   }
@@ -39,7 +30,7 @@ export class ProjectsComponent implements OnInit {
       {
         id: 1,
         title: 'E-commerce Platform',
-        description: 'Una plataforma completa de comercio electrónico con carrito de compras, pasarela de pago y panel de administración.',
+        description: 'A complete e-commerce platform with shopping cart, payment gateway and admin panel.',
         technologies: ['Angular', 'Node.js', 'MongoDB', 'Stripe'],
         imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         projectUrl: 'https://example.com/ecommerce',
@@ -49,7 +40,7 @@ export class ProjectsComponent implements OnInit {
       {
         id: 2,
         title: 'Weather App',
-        description: 'Aplicación del clima con pronósticos en tiempo real y búsqueda por ubicación.',
+        description: 'Weather application with real-time forecasts and location search.',
         technologies: ['Angular', 'OpenWeather API', 'Tailwind CSS'],
         imageUrl: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         projectUrl: 'https://example.com/weather',
@@ -59,7 +50,7 @@ export class ProjectsComponent implements OnInit {
       {
         id: 3,
         title: 'Task Management API',
-        description: 'API RESTful para gestión de tareas con autenticación JWT y autorización por roles.',
+        description: 'RESTful API for task management with JWT authentication and role-based authorization.',
         technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
         imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         githubUrl: 'https://github.com/example/task-api',
@@ -68,7 +59,7 @@ export class ProjectsComponent implements OnInit {
       {
         id: 4,
         title: 'Fitness Tracker Mobile App',
-        description: 'Aplicación móvil para seguimiento de ejercicios y progreso fitness.',
+        description: 'Mobile application for tracking exercises and fitness progress.',
         technologies: ['Ionic', 'Angular', 'Capacitor', 'Chart.js'],
         imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         projectUrl: 'https://example.com/fitness',
@@ -78,7 +69,7 @@ export class ProjectsComponent implements OnInit {
       {
         id: 5,
         title: 'Portfolio Website',
-        description: 'Sitio web personal para mostrar proyectos y habilidades como desarrollador.',
+        description: 'Personal website to showcase projects and skills as a developer.',
         technologies: ['Angular', 'Tailwind CSS', 'TypeScript'],
         imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         projectUrl: 'https://example.com',
@@ -88,7 +79,7 @@ export class ProjectsComponent implements OnInit {
       {
         id: 6,
         title: 'Chat Application',
-        description: 'Aplicación de chat en tiempo real con salas y mensajes privados.',
+        description: 'Real-time chat application with rooms and private messages.',
         technologies: ['Angular', 'Socket.io', 'Node.js', 'MySQL'],
         imageUrl: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         projectUrl: 'https://example.com/chat',
@@ -108,14 +99,7 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
-  getTechnologiesClass(index: number): string {
-    const colors = [
-      'bg-blue-100 text-blue-800',
-      'bg-green-100 text-green-800',
-      'bg-yellow-100 text-yellow-800',
-      'bg-red-100 text-red-800',
-      'bg-purple-100 text-purple-800'
-    ];
-    return colors[index % colors.length];
+  t(key: string) {
+    return this.i18n.t(key);
   }
 }

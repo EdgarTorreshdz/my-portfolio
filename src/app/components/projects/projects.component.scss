@@ -2,28 +2,7 @@
   display: block;
 }
 
-// Animaciones para las tarjetas de proyectos
-.project-card {
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-}
-
-// Estilos para el modo oscuro
-.dark {
-  .project-card {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
-    &:hover {
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-    }
-  }
-}
-
-// Ajustes responsivos
+// Ajustes responsivos para los filtros
 @media (max-width: 768px) {
   .category-filters {
     overflow-x: auto;
@@ -64,4 +43,9 @@
       }
     }
   }
+}
+
+// Asegurar que las tarjetas tengan la misma altura
+.grid {
+  align-items: stretch;
 }

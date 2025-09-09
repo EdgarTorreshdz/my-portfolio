@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div #container class="lazy-load-container">
+    <div #container class="lazy-load-container" [id]="'lazy-' + sectionId">
       <div *ngIf="!isLoaded" class="loading-placeholder">
         <div class="loading-spinner"></div>
       </div>
@@ -30,6 +30,10 @@ import { CommonModule } from '@angular/common';
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
+    .dark .loading-spinner {
+      border: 4px solid #374151;
+      border-top: 4px solid #3B82F6;
+    }
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -38,6 +42,8 @@ import { CommonModule } from '@angular/common';
 })
 export class LazyLoadComponent implements OnInit, OnDestroy {
   @Input() component: any;
+  @Input() sectionId!: string;
+
   @ViewChild('container', { read: ViewContainerRef, static: true }) container!: ViewContainerRef;
 
   isLoaded = false;
@@ -46,7 +52,12 @@ export class LazyLoadComponent implements OnInit, OnDestroy {
   constructor(private cfr: ComponentFactoryResolver) {}
 
   ngOnInit() {
-    this.setupIntersectionObserver();
+    // Cargar inmediatamente si es la sección hero
+    if (this.sectionId === 'hero') {
+      this.loadComponent();
+    } else {
+      this.setupIntersectionObserver();
+    }
   }
 
   ngOnDestroy() {
@@ -63,23 +74,34 @@ export class LazyLoadComponent implements OnInit, OnDestroy {
           this.observer?.disconnect();
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: '500px' }); // Cargar 500px antes
 
-    // Esperar a que la vista se renderice para observar el elemento
     setTimeout(() => {
       const element = this.container.element.nativeElement;
       this.observer?.observe(element);
-    }, 0);
+    }, 100);
   }
 
-  private async loadComponent() {
+  public loadComponent(): void {
+    if (this.isLoaded) return;
+
     try {
       const componentFactory = this.cfr.resolveComponentFactory(this.component);
       this.container.clear();
       this.container.createComponent(componentFactory);
       this.isLoaded = true;
+
+      // Notificar globalmente
+      this.notifyGlobalComponentLoaded();
     } catch (error) {
       console.error('Error loading component:', error);
+    }
+  }
+
+  private notifyGlobalComponentLoaded() {
+    const appComponent = (window as any).appComponent;
+    if (appComponent && typeof appComponent.onComponentLoaded === 'function') {
+      appComponent.onComponentLoaded(this.sectionId);
     }
   }
 }

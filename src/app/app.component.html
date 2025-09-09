@@ -2,26 +2,36 @@
   <app-header></app-header>
   <main>
     <!-- Hero se carga inmediatamente -->
-    <section id="hero">
-      <app-hero></app-hero>
+    <section id="hero" class="scroll-animation">
+      <app-lazy-load [component]="heroComponent" [sectionId]="'hero'"
+                    #heroLazy></app-lazy-load>
     </section>
 
-    <!-- Demás componentes se cargan con lazy loading -->
-    <section id="about">
-      <app-lazy-load [component]="aboutComponent"></app-lazy-load>
+    <!-- Demás componentes con lazy loading -->
+    <section id="about" class="scroll-animation">
+      <app-lazy-load [component]="aboutComponent" [sectionId]="'about'"
+                    #aboutLazy
+                    (componentLoaded)="onComponentLoaded('about')"></app-lazy-load>
     </section>
 
-    <section id="skills">
-      <app-lazy-load [component]="skillsComponent"></app-lazy-load>
+    <section id="skills" class="scroll-animation">
+      <app-lazy-load [component]="skillsComponent" [sectionId]="'skills'"
+                    #skillsLazy
+                    (componentLoaded)="onComponentLoaded('skills')"></app-lazy-load>
     </section>
 
-    <section id="projects">
-      <app-lazy-load [component]="projectsComponent"></app-lazy-load>
+    <section id="projects" class="scroll-animation">
+      <app-lazy-load [component]="projectsComponent" [sectionId]="'projects'"
+                    #projectsLazy
+                    (componentLoaded)="onComponentLoaded('projects')"></app-lazy-load>
     </section>
 
-    <section id="contact">
-      <app-lazy-load [component]="contactComponent"></app-lazy-load>
+    <section id="contact" class="scroll-animation">
+      <app-lazy-load [component]="contactComponent" [sectionId]="'contact'"
+                    #contactLazy
+                    (componentLoaded)="onComponentLoaded('contact')"></app-lazy-load>
     </section>
   </main>
   <app-footer></app-footer>
+  <app-language-switcher></app-language-switcher>
 </div>

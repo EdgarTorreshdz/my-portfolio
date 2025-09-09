@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SkillBarComponent } from '../../shared/skill-bar/skill-bar.component';
 import { CommonModule } from '@angular/common';
+import { I18nService } from '../../shared/i18n.service';
+import { Subscription } from 'rxjs';
 
 interface Skill {
   name: string;
@@ -11,11 +13,11 @@ interface Skill {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [SkillBarComponent,CommonModule],
+  imports: [SkillBarComponent, CommonModule],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent {
+export class SkillsComponent implements OnInit, OnDestroy {
   technicalSkills: Skill[] = [
     { name: 'Angular', percentage: 90, color: 'primary' },
     { name: 'TypeScript', percentage: 85, color: 'primary' },
@@ -25,16 +27,38 @@ export class SkillsComponent {
     { name: 'Node.js', percentage: 75, color: 'primary' }
   ];
 
-  softSkills: Skill[] = [
-    { name: 'Trabajo en equipo', percentage: 90, color: 'secondary' },
-    { name: 'Resolución de problemas', percentage: 85, color: 'secondary' },
-    { name: 'Comunicación', percentage: 80, color: 'secondary' },
-    { name: 'Gestión de tiempo', percentage: 75, color: 'secondary' },
-    { name: 'Creatividad', percentage: 85, color: 'secondary' }
-  ];
+  softSkills: Skill[] = [];
+  private langChangeSubscription!: Subscription;
 
-  ngOnInit():void{
+  constructor(public i18n: I18nService) { }
+
+  ngOnInit(): void {
     console.log('Skills iniciando');
+    this.updateSoftSkills();
 
+    // Suscribirse a cambios de idioma
+    this.langChangeSubscription = this.i18n.langChange.subscribe(() => {
+      this.updateSoftSkills();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+  }
+
+  private updateSoftSkills(): void {
+    this.softSkills = [
+      { name: this.t('skills.teamwork'), percentage: 90, color: 'secondary' },
+      { name: this.t('skills.problemSolving'), percentage: 85, color: 'secondary' },
+      { name: this.t('skills.communication'), percentage: 80, color: 'secondary' },
+      { name: this.t('skills.timeManagement'), percentage: 75, color: 'secondary' },
+      { name: this.t('skills.creativity'), percentage: 85, color: 'secondary' }
+    ];
+  }
+
+  t(key: string): string {
+    return this.i18n.t(key);
   }
 }

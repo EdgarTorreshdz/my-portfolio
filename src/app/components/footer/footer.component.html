@@ -5,9 +5,9 @@
 
       <!-- Brand Section -->
       <div class="footer-brand">
-        <h3 class="footer-title">Mi Portafolio</h3>
+        <h3 class="footer-title">{{ t('footer.brand.name') }}</h3>
         <p class="footer-description">
-          Desarrollador Frontend especializado en crear experiencias web excepcionales con Angular y Tailwind CSS.
+          {{ t('footer.brand.description') }}
         </p>
         <div class="social-links">
           <a
@@ -26,12 +26,12 @@
 
       <!-- Quick Links -->
       <div class="footer-section">
-        <h4 class="footer-subtitle">Enlaces Rápidos</h4>
+        <h4 class="footer-subtitle">{{ t('footer.links.title') }}</h4>
         <ul class="footer-links">
           <li *ngFor="let link of quickLinks">
             <a
-              [routerLink]="link.route"
-              class="footer-link"
+              (click)="scrollToSection(link.section, $event)"
+              class="footer-link cursor-pointer"
             >
               {{ link.label }}
             </a>
@@ -41,7 +41,7 @@
 
       <!-- Technologies -->
       <div class="footer-section">
-        <h4 class="footer-subtitle">Tecnologías</h4>
+        <h4 class="footer-subtitle">{{ t('footer.technologies.title') }}</h4>
         <ul class="footer-tech">
           <li *ngFor="let tech of technologies" class="footer-tech-item">
             {{ tech }}
@@ -51,19 +51,19 @@
 
       <!-- Contact Info -->
       <div class="footer-section">
-        <h4 class="footer-subtitle">Contacto</h4>
+        <h4 class="footer-subtitle">{{ t('footer.contact.title') }}</h4>
         <div class="contact-info">
           <p class="contact-item">
             <span class="contact-icon">📧</span>
-            tu.emailejemplo.com
+            {{ t('footer.contact.email') }}
           </p>
           <p class="contact-item">
             <span class="contact-icon">📞</span>
-            +123 456 7890
+            {{ t('footer.contact.phone') }}
           </p>
           <p class="contact-item">
             <span class="contact-icon">📍</span>
-            Ciudad, País
+            {{ t('footer.contact.location') }}
           </p>
         </div>
       </div>
@@ -73,11 +73,11 @@
     <div class="footer-bottom">
       <div class="footer-bottom-content">
         <p class="footer-copyright">
-          © {{ currentYear }} Mi Portafolio. Todos los derechos reservados.
+          {{ t('footer.copyright', { year: currentYear }) }}
         </p>
         <div class="footer-legal">
-          <a href="#" class="footer-legal-link">Política de Privacidad</a>
-          <a href="#" class="footer-legal-link">Términos de Servicio</a>
+          <a href="#" class="footer-legal-link">{{ t('footer.legal.privacy') }}</a>
+          <a href="#" class="footer-legal-link">{{ t('footer.legal.terms') }}</a>
         </div>
       </div>
     </div>
