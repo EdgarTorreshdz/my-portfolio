@@ -14,7 +14,7 @@ import { Project } from '../../models/project';
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   filteredProjects: Project[] = [];
-  categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack', 'microservices', 'AWS'];
+  categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack'];
   selectedCategory: string = 'Todos';
 
   constructor(public i18n: I18nService) { }
