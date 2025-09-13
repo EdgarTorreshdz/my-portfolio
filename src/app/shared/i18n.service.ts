@@ -258,8 +258,6 @@ export class I18nService {
           frontend: 'Frontend',
           backend: 'Backend',
           fullstack: 'Fullstack',
-          microservices: 'Microservices',
-          aws: 'AWS'
         },
         code: 'Code',
         demo: 'View Demo',
