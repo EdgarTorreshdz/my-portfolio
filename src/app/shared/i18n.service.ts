@@ -107,9 +107,14 @@ export class I18nService {
           technologies: 'Tecnologías dominadas'
         },
         experience: {
+          hersotek: {
+            title: 'Full Stack Developer - Hersotek',
+            period: 'Marzo 2024 - Presente',
+            description: 'Development of administrative applications using .NET, Angular, AWS, SQL and NoSQL. Development and implementation of microservices.'
+          },
           go1: {
             title: '.NET Developer - Go1 Technologies/PriceTravel',
-            period: 'Agosto 2023 - Presente',
+            period: 'Agosto 2023 - Febrero 2024',
             description: 'Desarrollo de aplicaciones administrativas usando .NET, Angular, AWS, SQL y NoSQL. Desarrollo e implementación de microservicios.'
           },
           ultra: {
@@ -291,9 +296,14 @@ export class I18nService {
           technologies: 'Mastered technologies'
         },
         experience: {
+          hersotek: {
+            title: 'Full Stack Developer - Hersotek',
+            period: 'March 2024 - Present',
+            description: 'Development of administrative applications using .NET, Angular, AWS, SQL and NoSQL. Development and implementation of microservices.'
+          },
           go1: {
             title: '.NET Developer - Go1 Technologies/PriceTravel',
-            period: 'August 2023 - Present',
+            period: 'August 2023 - February 2024',
             description: 'Development of administrative applications using .NET, Angular, AWS, SQL and NoSQL. Development and implementation of microservices.'
           },
           ultra: {

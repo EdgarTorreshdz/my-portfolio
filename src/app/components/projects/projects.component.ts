@@ -29,6 +29,16 @@ export class ProjectsComponent implements OnInit {
     this.projects = [
       {
         id: 1,
+        title: 'PokéAPI Explorer',
+        description: 'Aplicación Angular que consume la PokéAPI para explorar Pokémon, tipos, habilidades, movimientos y más. Interfaz responsive con diseño moderno.',
+        technologies: ['Angular', 'TypeScript', 'CSS3', 'HTML5', 'RxJS', 'PokeAPI'],
+        imageUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        projectUrl: 'https://pokeapi.edgartorres.dev',
+        githubUrl: 'https://github.com/EdgarTorreshdz/pokeangular-app',
+        category: 'Frontend',
+      },
+      {
+        id: 2,
         title: 'Sistema Administrativo',
         description: 'Plataforma administrativa para gestión de recursos con panel de control y reportes.',
         technologies: ['.NET', 'Angular', 'SQL Server', 'AWS'],
@@ -38,7 +48,7 @@ export class ProjectsComponent implements OnInit {
         category: 'Fullstack'
       },
       {
-        id: 2,
+        id: 3,
         title: 'API de Microservicios',
         description: 'Arquitectura de microservicios para aplicación empresarial con comunicación asíncrona.',
         technologies: ['.NET', 'Docker', 'RabbitMQ', 'MongoDB'],
@@ -47,7 +57,7 @@ export class ProjectsComponent implements OnInit {
         category: 'microservices'
       },
       {
-        id: 3,
+        id: 4,
         title: 'Sistema Point of Sale',
         description: 'Sistema de punto de venta con gestión de inventario, ventas y reportes financieros.',
         technologies: ['.NET', 'VueJS', 'SQL Server', 'WPF'],
@@ -57,7 +67,7 @@ export class ProjectsComponent implements OnInit {
         category: 'Fullstack'
       },
       {
-        id: 4,
+        id: 5,
         title: 'Tienda Online E-commerce',
         description: 'Plataforma de e-commerce completa con carrito de compras y pasarela de pagos.',
         technologies: ['Laravel', 'PHP', 'VueJS', 'MySQL', 'AWS'],
@@ -67,7 +77,7 @@ export class ProjectsComponent implements OnInit {
         category: 'Fullstack'
       },
       {
-        id: 5,
+        id: 6,
         title: 'Dashboard Analítico',
         description: 'Panel de control con métricas y gráficos interactivos para análisis de datos.',
         technologies: ['Angular', 'TypeScript', 'Chart.js', 'REST API'],
@@ -77,7 +87,7 @@ export class ProjectsComponent implements OnInit {
         category: 'Frontend'
       },
       {
-        id: 6,
+        id: 7,
         title: 'Servicios Cloud AWS',
         description: 'Implementación de infraestructura cloud con servicios escalables en AWS.',
         technologies: ['AWS Lambda', 'S3', 'RDS', 'CloudFront'],
@@ -86,7 +96,7 @@ export class ProjectsComponent implements OnInit {
         category: 'AWS'
       },
       {
-        id: 7,
+        id: 8,
         title: 'API RESTful .NET',
         description: 'API robusta para aplicación empresarial con autenticación JWT y autorización.',
         technologies: ['.NET Core', 'Entity Framework', 'JWT', 'SQL Server'],
@@ -95,7 +105,7 @@ export class ProjectsComponent implements OnInit {
         category: 'Backend'
       },
       {
-        id: 8,
+        id: 9,
         title: 'Aplicación VueJS SPA',
         description: 'Single Page Application moderna con VueJS para gestión de contenido.',
         technologies: ['VueJS', 'Vuex', 'Vue Router', 'Tailwind CSS'],

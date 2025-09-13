@@ -47,28 +47,28 @@ export class AboutComponent {
       // Experiencia profesional
       experience: [
         {
+          title: this.t('about.experience.hersotek.title'),
+          period: this.t('about.experience.hersotek.period'),
+          description: this.t('about.experience.hersotek.description'),
+          technologies: ['Node', 'Angular', 'Azure', 'SQL']
+        },
+        {
           title: this.t('about.experience.go1.title'),
           period: this.t('about.experience.go1.period'),
           description: this.t('about.experience.go1.description'),
-          technologies: ['.NET', 'Angular', 'AWS', 'SQL', 'NoSQL', 'Microservicios']
+          technologies: ['.NET', 'Angular', 'AWS', 'SQL', 'NoSQL']
         },
         {
           title: this.t('about.experience.ultra.title'),
           period: this.t('about.experience.ultra.period'),
           description: this.t('about.experience.ultra.description'),
-          technologies: ['.NET', 'VueJS', 'Nuxt', 'SQL', 'Microservicios']
+          technologies: ['.NET', 'VueJS', 'Nuxt', 'SQL']
         },
         {
           title: this.t('about.experience.novusred.title'),
           period: this.t('about.experience.novusred.period'),
           description: this.t('about.experience.novusred.description'),
           technologies: ['Laravel', 'PHP', 'VueJS', 'SQL', 'AWS']
-        },
-        {
-          title: this.t('about.experience.ozelot.title'),
-          period: this.t('about.experience.ozelot.period'),
-          description: this.t('about.experience.ozelot.description'),
-          technologies: ['.NET', 'VueJS']
         }
       ],
       // Educación
