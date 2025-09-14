@@ -71,7 +71,7 @@ export class I18nService {
           fullstack: 'Fullstack',
           microservices: 'Microservicios',
           aws: 'AWS',
-          technicalTest: 'TechnicalTest'
+          technicaltest: 'Prueba Técnica'
         },
         code: 'Código',
         demo: 'Ver Demo',
@@ -261,7 +261,7 @@ export class I18nService {
           fullstack: 'Fullstack',
           microservices: 'Microservices',
           aws: 'AWS',
-          technicalTest: 'TechnicalTest'
+          technicaltest: 'TechnicalTest'
         },
         code: 'Code',
         demo: 'View Demo',
