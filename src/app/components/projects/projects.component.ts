@@ -14,7 +14,7 @@ import { Project } from '../../models/project';
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   filteredProjects: Project[] = [];
-  categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack', 'Technical Test'];
+  categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack', 'TechnicalTest'];
   selectedCategory: string = 'Todos';
 
   constructor(public i18n: I18nService) { }
@@ -115,7 +115,7 @@ export class ProjectsComponent implements OnInit {
         imageUrl: '/projects/products-app.png',
         projectUrl: 'https://products-app.edgartorres.dev/',
         githubUrl: '#',
-        category: 'Technical Test'
+        category: 'TechnicalTest'
       },
     ];
   }
