@@ -14,7 +14,7 @@ import { Project } from '../../models/project';
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   filteredProjects: Project[] = [];
-  categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack'];
+  categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack', 'Technical Test'];
   selectedCategory: string = 'Todos';
 
   constructor(public i18n: I18nService) { }
@@ -106,6 +106,16 @@ export class ProjectsComponent implements OnInit {
         projectUrl: 'https://boatsbooking.com/',
         githubUrl: '#',
         category: 'Frontend'
+      },
+      {
+        id: 9,
+        title: 'Product-app',
+        description: 'Aplicación web con autenticación de usuarios y operaciones CRUD para gestión de productos. Dividida en frontend y backend para mejor mantenimiento.',
+        technologies: ['Angular', 'SQL', 'Node'],
+        imageUrl: '/projects/products-app.png',
+        projectUrl: 'https://products-app.edgartorres.dev/',
+        githubUrl: '#',
+        category: 'Technical Test'
       },
     ];
   }

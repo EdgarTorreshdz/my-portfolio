@@ -70,7 +70,8 @@ export class I18nService {
           backend: 'Backend',
           fullstack: 'Fullstack',
           microservices: 'Microservicios',
-          aws: 'AWS'
+          aws: 'AWS',
+          technicalTest: 'Technical Test'
         },
         code: 'Código',
         demo: 'Ver Demo',
@@ -258,6 +259,9 @@ export class I18nService {
           frontend: 'Frontend',
           backend: 'Backend',
           fullstack: 'Fullstack',
+          microservices: 'Microservices',
+          aws: 'AWS',
+          technicalTest: 'Technical Test'
         },
         code: 'Code',
         demo: 'View Demo',
