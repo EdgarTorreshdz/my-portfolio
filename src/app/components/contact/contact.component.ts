@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { I18nService } from '../../shared/i18n.service';
+import { ContactMessage } from '../../models/ContactMessage';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -24,7 +26,8 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    public i18n: I18nService // 👈 lo hacemos público para usar en el template
+    public i18n: I18nService,
+    private contactService: ContactService
   ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -47,18 +50,26 @@ export class ContactComponent implements OnInit {
       this.isSubmitting = true;
       this.submitError = false;
 
-      setTimeout(() => {
-        this.isSubmitting = false;
-        const success = Math.random() > 0.3;
+      const contactData: ContactMessage = {
+        name: this.contactForm.value.name,
+        email: this.contactForm.value.email,
+        subject: this.contactForm.value.subject,
+        message: this.contactForm.value.message,
+        website: '' // el honeypot, dejar vacío
+      };
 
-        if (success) {
+      this.contactService.sendMessage(contactData).subscribe({
+        next: () => {
+          this.isSubmitting = false;
           this.submitSuccess = true;
           this.contactForm.reset();
           setTimeout(() => (this.submitSuccess = false), 5000);
-        } else {
+        },
+        error: () => {
+          this.isSubmitting = false;
           this.submitError = true;
         }
-      }, 1500);
+      });
     }
   }
 }
