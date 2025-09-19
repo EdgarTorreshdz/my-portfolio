@@ -15,13 +15,19 @@ import { PROJECTS } from '../../data/projects.data';
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   filteredProjects: Project[] = [];
+  paginatedProjects: Project[] = [];
+
   categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack', 'TechnicalTest'];
   selectedCategory: string = 'Todos';
 
-  constructor(public i18n: I18nService) { }
+  // Paginación
+  currentPage: number = 1;
+  itemsPerPage: number = 4;
+  totalPages: number = 1;
+
+  constructor(public i18n: I18nService) {}
 
   ngOnInit(): void {
-    console.log('Projects iniciando');
     this.loadProjects();
     this.filterProjects();
   }
@@ -34,12 +40,33 @@ export class ProjectsComponent implements OnInit {
   }
 
   filterProjects(category: string = 'Todos'): void {
-    console.log('Projects ', this.projects)
     this.selectedCategory = category;
     if (category === 'Todos') {
       this.filteredProjects = this.projects;
     } else {
       this.filteredProjects = this.projects.filter(project => project.category === category);
+    }
+    this.currentPage = 1;
+    this.updatePagination();
+  }
+
+  updatePagination(): void {
+    this.totalPages = Math.ceil(this.filteredProjects.length / this.itemsPerPage);
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    this.paginatedProjects = this.filteredProjects.slice(startIndex, startIndex + this.itemsPerPage);
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.updatePagination();
+    }
+  }
+
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updatePagination();
     }
   }
 

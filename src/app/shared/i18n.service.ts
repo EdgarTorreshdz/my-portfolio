@@ -99,7 +99,7 @@ export class I18nService {
         subtitle: 'Desarrollador de Software Full-Stack',
         description: 'Soy un desarrollador con más de 3 años de experiencia en .NET, Angular, VueJS, Laravel y AWS. Especializado en la creación de microservicios, aplicaciones administrativas y soluciones full-stack.',
         longDescription: 'Mi pasión por el desarrollo de software comenzó cuando creé mi primera aplicación. Desde entonces, he estado constantemente aprendiendo y mejorando mis habilidades. Disfruto transformando ideas complejas en soluciones escalables y eficientes.',
-        storyTitle: 'Mi Experiencia Profesional',
+        storyTitle: 'Experiencia Profesional',
         passionStatement: 'Me encanta trabajar en proyectos desafiantes que me permitan crecer profesionalmente y aportar valor a través de soluciones innovadoras.',
         stats: {
           experience: 'Años de experiencia',

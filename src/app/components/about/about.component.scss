@@ -78,8 +78,25 @@ $primary-dark: #2563eb;
   @apply mb-16;
 }
 
+.about-section {
+  @apply space-y-12;
+}
+
+.about-experience,
+.about-education {
+  @apply space-y-6;
+}
+
 .details-title {
   @apply text-2xl font-semibold text-gray-900 dark:text-white mb-4;
+}
+
+.about-column {
+  @apply space-y-8;
+}
+
+.border-l-2 {
+  @apply pl-6; // espacio interno para que no se pegue el texto
 }
 
 .details-description {
@@ -137,4 +154,18 @@ $primary-dark: #2563eb;
   &--secondary {
     @apply border-2 border-white text-white hover:bg-white hover:text-primary;
   }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
 }

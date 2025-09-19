@@ -97,6 +97,7 @@ export class AboutComponent {
     };
   }
 
+
   t(key: string): string {
     return this.i18n.t(key);
   }
