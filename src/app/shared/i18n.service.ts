@@ -111,7 +111,7 @@ export class I18nService {
           hersotek: {
             title: 'Full Stack Developer - Hersotek',
             period: 'Marzo 2024 - Presente',
-            description: 'Development of administrative applications using .NET, Angular, AWS, SQL and NoSQL. Development and implementation of microservices.'
+            description: 'Desarrollo de aplicaciones administrativas utilizando .NET, Angular, AWS, SQL y NoSQL. Desarrollo e implementación de microservicios.'
           },
           go1: {
             title: '.NET Developer - Go1 Technologies/PriceTravel',
