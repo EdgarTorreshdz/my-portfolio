@@ -30,6 +30,10 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.loadProjects();
     this.filterProjects();
+    this.i18n.langChange.subscribe(() => {
+      this.loadProjects();
+      this.filterProjects(this.selectedCategory);
+    });
   }
 
   loadProjects(): void {
