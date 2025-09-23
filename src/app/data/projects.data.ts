@@ -13,7 +13,7 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     },
     technologies: ['Laravel', 'Tailwind CSS', 'Heroku', 'PostgreSQL'],
     imageUrl: '/projects/estudio.png',
-    projectUrl: 'https://estudio.edgartorres.dev/',
+    projectUrl: 'https://studio.edgartorres.dev/',
     githubUrl: '',
     category: 'Fullstack',
   },
