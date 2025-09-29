@@ -16,19 +16,10 @@ export class FooterComponent {
   constructor(public i18n: I18nService) {}
 
   socialLinks = [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/EdgarTorreshdz',
-      icon: 'github'
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://linkedin.com/in/edgar-antonio-torres-hernández-55942519b',
-      icon: 'linkedin'
-    }
+    { name: 'GitHub', url: 'https://github.com/EdgarTorreshdz', icon: 'github' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/edgar-antonio-torres-hernández-55942519b', icon: 'linkedin' }
   ];
 
-  // Quick links ahora usa scroll en lugar de rutas
   get quickLinks() {
     return [
       { label: this.t('footer.links.home'), section: 'hero' },
@@ -39,32 +30,14 @@ export class FooterComponent {
     ];
   }
 
-  technologies = [
-    '.NET Framework',
-    'C#',
-    'Angular',
-    'TypeScript',
-    'JavaScript',
-    'PHP',
-    'Laravel',
-    'SQL Server',
-    'MySQL',
-    'AWS',
-    'Azure',
-    'Node.js'
-  ];
-
   scrollToSection(sectionId: string, event: Event) {
     event.preventDefault();
-
     const appComponent = (window as any).appComponent;
     if (appComponent && typeof appComponent.scrollToSection === 'function') {
       appComponent.scrollToSection(sectionId);
     } else {
       const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
