@@ -24,14 +24,14 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     category: 'Frontend',
   },  
   {
-    title: {
-      es: 'Aplicaciones Administrativas',
-      en: 'Administrative Applications'
-    },
-    description: {
-      es: 'Conjunto de aplicaciones administrativas diseñadas para la gestión integral de recursos y procesos internos en empresas de gran escala. Incluyen módulos para control de usuarios, reportes dinámicos, tableros con métricas clave y funcionalidades adaptadas a la operación diaria. Optimizadas para un rendimiento ágil y seguro en la nube.',
-      en: 'Set of administrative applications designed for comprehensive management of resources and internal processes in large-scale companies. Includes modules for user control, dynamic reporting, dashboards with key metrics, and features tailored to daily operations. Optimized for agile and secure cloud performance.'
-    },
+  title: {
+    es: 'Backoffice de Hospedaje',
+    en: 'Hospitality Backoffice'
+  },
+  description: {
+    es: 'Sistema de backoffice diseñado para complementar la plataforma principal de hospedaje y reservas. Permite gestionar información clave como clientes, habitaciones, disponibilidad, procesos de renta, facturación y reportes. Su propósito es centralizar la información operativa y optimizar la toma de decisiones mediante paneles intuitivos y métricas en tiempo real.',
+    en: 'Backoffice system designed to complement the main lodging and booking platform. It enables the management of key information such as customers, rooms, availability, rental processes, billing, and reporting. Its purpose is to centralize operational data and optimize decision-making through intuitive dashboards and real-time metrics.'
+  },
     technologies: ['.NET', 'Angular', 'Blazor', 'SQL', 'AWS'],
     images: [
       { url: '/projects/pricetravel.png', type: 'main' },
