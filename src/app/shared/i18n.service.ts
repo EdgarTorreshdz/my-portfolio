@@ -194,7 +194,8 @@ export class I18nService {
         legal: {
           privacy: 'Política de Privacidad',
           terms: 'Términos de Servicio'
-        }
+        },
+        rights: 'Todos los derechos reservados',
       }
     },
     en: {
@@ -384,7 +385,8 @@ export class I18nService {
         legal: {
           privacy: 'Privacy Policy',
           terms: 'Terms of Service'
-        }
+        },
+        rights: 'All rights reserved'
       }
     }
   };
