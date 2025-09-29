@@ -23,7 +23,7 @@ export class I18nService {
       hero: {
         title: 'Hola, soy',
         subtitle: 'Desarrollador de Software',
-        description: 'Especializado en .NET, Angular, VueJS y desarrollo en AWS con más de 3 años de experiencia',
+        description: 'Especializado en .NET, Angular, Laravel y desarrollo en AWS, AZURE con más de 3 años de experiencia',
         btnProjects: 'Ver proyectos',
         btnContact: 'Contactar',
         experience: 'Años de experiencia',
@@ -97,7 +97,7 @@ export class I18nService {
       about: {
         title: 'Sobre Mí',
         subtitle: 'Desarrollador de Software Full-Stack',
-        description: 'Soy un desarrollador con más de 3 años de experiencia en .NET, Angular, VueJS, Laravel y AWS. Especializado en la creación de microservicios, aplicaciones administrativas y soluciones full-stack.',
+        description: 'Soy un desarrollador con más de 3 años de experiencia en .NET, Angular, Laravel y AWS. Especializado en la creación de microservicios, aplicaciones administrativas y soluciones full-stack.',
         longDescription: 'Mi pasión por el desarrollo de software comenzó cuando creé mi primera aplicación. Desde entonces, he estado constantemente aprendiendo y mejorando mis habilidades. Disfruto transformando ideas complejas en soluciones escalables y eficientes.',
         storyTitle: 'Experiencia Profesional',
         passionStatement: 'Me encanta trabajar en proyectos desafiantes que me permitan crecer profesionalmente y aportar valor a través de soluciones innovadoras.',
@@ -170,7 +170,7 @@ export class I18nService {
       footer: {
         brand: {
           name: 'Edgar Torres',
-          description: 'Desarrollador de Software especializado en .NET, Angular, VueJS y AWS con más de 3 años de experiencia.'
+          description: 'Desarrollador de Software especializado en .NET, Angular, Laravel y AWS con más de 3 años de experiencia.'
         },
         links: {
           title: 'Enlaces Rápidos',
@@ -213,7 +213,7 @@ export class I18nService {
       hero: {
         title: 'Hi, I am',
         subtitle: 'Software Developer',
-        description: 'Specialized in .NET, Angular, VueJS and AWS development with over 3 years of experience',
+        description: 'Specialized in .NET, Angular, Laravel and AWS, AZURE development with over 3 years of experience',
         btnProjects: 'View projects',
         btnContact: 'Contact',
         experience: 'Years of experience',

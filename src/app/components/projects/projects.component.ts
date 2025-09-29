@@ -14,6 +14,9 @@ import { getTechnologiesClass } from '../../shared/utils/tech-colors';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  currentSlide = 0;
+
+  lightboxIndex: number | null = null;
   // --- NUEVO: setter para capturar el panel cuando aparece ---
   private _modalPanel?: ElementRef<HTMLDivElement>;
   @ViewChild('modalPanel') set modalPanelRef(el: ElementRef<HTMLDivElement> | undefined) {
@@ -35,7 +38,6 @@ export class ProjectsComponent implements OnInit {
 
   categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack', 'TechnicalTest'];
   selectedCategory = 'Todos';
-  activeTab: 'web' | 'mobile' = 'web';
 
   currentPage = 1;
   itemsPerPage = 4;
@@ -49,15 +51,12 @@ export class ProjectsComponent implements OnInit {
   get mainImage(): string | undefined {
     return this.selectedProject?.images.find(img => img.type === 'main')?.url;
   }
-  get webImages(): string[] {
-    return this.selectedProject ? this.selectedProject.images.filter(i => i.type === 'web').map(i => i.url) : [];
-  }
-  get mobileImages(): string[] {
-    return this.selectedProject ? this.selectedProject.images.filter(i => i.type === 'mobile').map(i => i.url) : [];
+  get siteImages(): string[] {
+    return this.selectedProject ? this.selectedProject.images.filter(i => i.type === 'site').map(i => i.url) : [];
   }
   get galleryImages(): string[] {
     if (!this.selectedProject) return [];
-    return this.selectedProject.images.filter(img => img.type === this.activeTab).map(img => img.url);
+    return this.selectedProject.images.filter(img => img.type === 'site').map(img => img.url);
   }
 
   ngOnInit(): void {
@@ -110,7 +109,6 @@ export class ProjectsComponent implements OnInit {
     }
 
     this.selectedProject = project;
-    this.activeTab = 'web';
     document.body.style.overflow = 'hidden'; // bloquea scroll del fondo
     // No necesitas setTimeout aquí gracias al setter de @ViewChild
   }
@@ -120,5 +118,20 @@ export class ProjectsComponent implements OnInit {
     document.body.style.overflow = ''; // restaura scroll
   }
 
+nextSlide() {
+  if (this.galleryImages.length > 0) {
+    this.currentSlide = (this.currentSlide + 1) % this.galleryImages.length;
+  }
+}
 
+prevSlide() {
+  if (this.galleryImages.length > 0) {
+    this.currentSlide =
+      (this.currentSlide - 1 + this.galleryImages.length) % this.galleryImages.length;
+  }
+}
+
+goToSlide(index: number) {
+  this.currentSlide = index;
+}
 }

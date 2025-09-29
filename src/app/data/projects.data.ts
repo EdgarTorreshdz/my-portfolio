@@ -14,11 +14,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     technologies: ['Laravel', 'Tailwind CSS', 'Heroku', 'PostgreSQL'],
     images: [
       { url: '/projects/estudio.png', type: 'main' },
-      { url: '/projects/estudio-web1.png', type: 'web' },
-      { url: '/projects/estudio-web2.png', type: 'web' },
-      { url: '/projects/estudio-mobile1.png', type: 'mobile' },
-      { url: '/projects/estudio-mobile2.png', type: 'mobile' },
-      { url: '/projects/estudio-mobile3.png', type: 'mobile' },
+      { url: '/projects/estudio1.png', type: 'site' },
+      { url: '/projects/estudio2.png', type: 'site' },
+      { url: '/projects/estudio3.png', type: 'site' },
     ],
     projectUrl: 'https://studio.edgartorres.dev/',
     githubUrl: '',
@@ -36,12 +34,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     technologies: ['Laravel', 'Tailwind CSS', 'Heroku', 'PostgreSQL'],
     images: [
       { url: '/projects/constructora.png', type: 'main' },
-      { url: '/projects/constructora-web1.png', type: 'web' },
-      { url: '/projects/constructora-web2.png', type: 'web' },
-      { url: '/projects/constructora-web3.png', type: 'web' },
-      { url: '/projects/constructora-mobile1.png', type: 'mobile' },
-      { url: '/projects/constructora-mobile2.png', type: 'mobile' },
-      { url: '/projects/constructora-mobile3.png', type: 'mobile' }
+      { url: '/projects/constructora-site1.png', type: 'site' },
+      { url: '/projects/constructora-site2.png', type: 'site' },
+      { url: '/projects/constructora-site3.png', type: 'site' },
     ],
     projectUrl: 'https://constructora.edgartorres.dev/',
     githubUrl: 'https://github.com/EdgarTorreshdz/constructora-app',
@@ -59,12 +54,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     technologies: ['Angular', 'TypeScript', 'SCSS', 'HTML5', 'RxJS', 'AWS'],
     images: [
       { url: '/projects/portfolio.png', type: 'main' },
-      { url: '/projects/portfolio-web1.png', type: 'web' },
-      { url: '/projects/portfolio-web2.png', type: 'web' },
-      { url: '/projects/portfolio-web3.png', type: 'web' },
-      { url: '/projects/portfolio-mobile1.png', type: 'mobile' },
-      { url: '/projects/portfolio-mobile2.png', type: 'mobile' },
-      { url: '/projects/portfolio-mobile3.png', type: 'mobile' }
+      { url: '/projects/portfolio-site1.png', type: 'site' },
+      { url: '/projects/portfolio-site2.png', type: 'site' },
+      { url: '/projects/portfolio-site3.png', type: 'site' },
     ],
     projectUrl: 'https://edgartorres.dev',
     githubUrl: 'https://github.com/EdgarTorreshdz/my-portfolio',
@@ -82,12 +74,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     technologies: ['Angular', 'TypeScript', 'CSS3', 'HTML5', 'RxJS', 'PokeAPI'],
     images: [
       { url: '/projects/pokeapi.png', type: 'main' },
-      { url: '/projects/pokeapi-web1.png', type: 'web' },
-      { url: '/projects/pokeapi-web2.png', type: 'web' },
-      { url: '/projects/pokeapi-web3.png', type: 'web' },
-      { url: '/projects/pokeapi-mobile1.png', type: 'mobile' },
-      { url: '/projects/pokeapi-mobile2.png', type: 'mobile' },
-      { url: '/projects/pokeapi-mobile3.png', type: 'mobile' }
+      { url: '/projects/pokeapi-site1.png', type: 'site' },
+      { url: '/projects/pokeapi-site2.png', type: 'site' },
+      { url: '/projects/pokeapi-site3.png', type: 'site' },
     ],
     projectUrl: 'https://pokeapi.edgartorres.dev',
     githubUrl: 'https://github.com/EdgarTorreshdz/pokeangular-app',
@@ -104,7 +93,8 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     },
     technologies: ['Node', 'Angular', 'SQL Server', 'Azure'],
     images: [
-      { url: '/projects/hersotek.jpg', type: 'main' }
+      { url: '/projects/hersotek.jpg', type: 'main' },
+      { url: '/projects/hersotek.jpg', type: 'site' }
     ],
     projectUrl: 'https://hersotek.com/',
     githubUrl: '#',
@@ -121,7 +111,10 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     },
     technologies: ['.NET', 'Angular', 'Blazor', 'SQL', 'AWS'],
     images: [
-      { url: '/projects/pricetravel.png', type: 'main' }
+      { url: '/projects/pricetravel.png', type: 'main' },
+      { url: '/projects/pricetravel-site1.png', type: 'site' },
+      { url: '/projects/pricetravel-site2.png', type: 'site' },
+      { url: '/projects/pricetravel-site3.png', type: 'site' },
     ],
     projectUrl: 'https://www.pricetravel.com/',
     githubUrl: '#',
@@ -138,7 +131,10 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     },
     technologies: ['.NET', 'VueJS', 'SQL Server'],
     images: [
-      { url: '/projects/grupoultra.png', type: 'main' }
+      { url: '/projects/grupoultra.png', type: 'main' },
+      { url: '/projects/grupoultra-site1.png', type: 'site' },
+      { url: '/projects/grupoultra-site2.png', type: 'site' },
+      { url: '/projects/grupoultra-site3.png', type: 'site' },
     ],
     projectUrl: 'https://www.grupoultra.com/',
     githubUrl: '#',
@@ -155,7 +151,10 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     },
     technologies: ['Laravel', 'PHP', 'Node', 'MySQL', 'SQL', 'AWS'],
     images: [
-      { url: '/projects/novusred.png', type: 'main' }
+      { url: '/projects/novusred.png', type: 'main' },
+      { url: '/projects/novusred-site1.png', type: 'site' },
+      { url: '/projects/novusred-site2.png', type: 'site' },
+      { url: '/projects/novusred-site3.png', type: 'site' },
     ],
     projectUrl: 'https://novusred.mx/',
     githubUrl: '#',
@@ -173,12 +172,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     technologies: ['Laravel', 'SQL'],
     images: [
       { url: '/projects/rpc.png', type: 'main' },
-      { url: '/projects/rpc-web1.png', type: 'web' },
-      { url: '/projects/rpc-web2.png', type: 'web' },
-      { url: '/projects/rpc-web3.png', type: 'web' },
-      { url: '/projects/rpc-mobile1.png', type: 'mobile' },
-      { url: '/projects/rpc-mobile2.png', type: 'mobile' },
-      { url: '/projects/rpc-mobile3.png', type: 'mobile' }
+      { url: '/projects/rpc-site1.png', type: 'site' },
+      { url: '/projects/rpc-site2.png', type: 'site' },
+      { url: '/projects/rpc-site3.png', type: 'site' },
     ],
     projectUrl: 'http://regalos-personalizados-b12bcc15d468.herokuapp.com/',
     githubUrl: 'https://github.com/EdgarTorreshdz/regalos_personalizados_cancun',
@@ -195,7 +191,10 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     },
     technologies: ['Laravel', 'SQL'],
     images: [
-      { url: '/projects/boatsbooking.png', type: 'main' }
+      { url: '/projects/boatsbooking.png', type: 'main' },
+      { url: '/projects/boatsbooking-site1.png', type: 'site' },
+      { url: '/projects/boatsbooking-site2.png', type: 'site' },
+      { url: '/projects/boatsbooking-site3.png', type: 'site' },
     ],
     projectUrl: 'https://boatsbooking.com/',
     githubUrl: '#',
@@ -212,7 +211,8 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     },
     technologies: ['Angular', 'SQL', 'Node'],
     images: [
-      { url: '/projects/products-app.png', type: 'main' }
+      { url: '/projects/products-app.png', type: 'main' },
+      { url: '/projects/products-app-site1.png', type: 'site' },
     ],
     projectUrl: 'https://products-app.edgartorres.dev/',
     githubUrl: '#',

@@ -157,4 +157,9 @@ export class AppComponent implements OnInit {
   changeLang(lang: 'es' | 'en') {
     this.router.navigate([`/${lang}/home`]);
   }
+
+  scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 }

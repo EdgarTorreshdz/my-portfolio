@@ -5,7 +5,7 @@
       <a href="#hero"
         (click)="scrollToSection('hero', $event)"
         class="logo flex items-center text-2xl font-bold transition-all duration-500 group">
-        <img src="/images/logo_white.svg"
+        <img src="/images/logo_blue.svg"
             alt="{{ t('header.logo') }}"
             class="h-8 w-auto mr-2 group-hover:scale-105 transition-transform duration-300">
 
@@ -43,7 +43,7 @@
                        hover:bg-primary/10 transition-all duration-300 group"
                 [attr.aria-label]="currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español'">
           <span class="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors duration-300">
-            {{ currentLang === 'es' ? 'EN' : 'ES' }}
+            {{ currentLang === 'es' ? 'ES' : 'EN' }}
           </span>
         </button>
 

@@ -32,6 +32,11 @@
                     (componentLoaded)="onComponentLoaded('contact')"></app-lazy-load>
     </section>
   </main>
+  <button (click)="scrollToTop()"
+        class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full
+               bg-primary text-white shadow-lg flex items-center justify-center
+               hover:bg-primary-dark transition-all duration-300">
+  ↑
+</button>
   <app-footer></app-footer>
-  <app-language-switcher></app-language-switcher>
 </div>
