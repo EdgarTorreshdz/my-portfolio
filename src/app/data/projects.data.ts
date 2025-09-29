@@ -16,7 +16,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       { url: '/projects/estudio.png', type: 'main' },
       { url: '/projects/estudio-web1.png', type: 'web' },
       { url: '/projects/estudio-web2.png', type: 'web' },
-      { url: '/projects/estudio-mobile1.png', type: 'mobile' }
+      { url: '/projects/estudio-mobile1.png', type: 'mobile' },
+      { url: '/projects/estudio-mobile2.png', type: 'mobile' },
+      { url: '/projects/estudio-mobile3.png', type: 'mobile' },
     ],
     projectUrl: 'https://studio.edgartorres.dev/',
     githubUrl: '',
@@ -35,7 +37,11 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     images: [
       { url: '/projects/constructora.png', type: 'main' },
       { url: '/projects/constructora-web1.png', type: 'web' },
-      { url: '/projects/constructora-mobile1.png', type: 'mobile' }
+      { url: '/projects/constructora-web2.png', type: 'web' },
+      { url: '/projects/constructora-web3.png', type: 'web' },
+      { url: '/projects/constructora-mobile1.png', type: 'mobile' },
+      { url: '/projects/constructora-mobile2.png', type: 'mobile' },
+      { url: '/projects/constructora-mobile3.png', type: 'mobile' }
     ],
     projectUrl: 'https://constructora.edgartorres.dev/',
     githubUrl: 'https://github.com/EdgarTorreshdz/constructora-app',
@@ -54,7 +60,11 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     images: [
       { url: '/projects/portfolio.png', type: 'main' },
       { url: '/projects/portfolio-web1.png', type: 'web' },
-      { url: '/projects/portfolio-mobile1.png', type: 'mobile' }
+      { url: '/projects/portfolio-web2.png', type: 'web' },
+      { url: '/projects/portfolio-web3.png', type: 'web' },
+      { url: '/projects/portfolio-mobile1.png', type: 'mobile' },
+      { url: '/projects/portfolio-mobile2.png', type: 'mobile' },
+      { url: '/projects/portfolio-mobile3.png', type: 'mobile' }
     ],
     projectUrl: 'https://edgartorres.dev',
     githubUrl: 'https://github.com/EdgarTorreshdz/my-portfolio',
@@ -73,7 +83,11 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     images: [
       { url: '/projects/pokeapi.png', type: 'main' },
       { url: '/projects/pokeapi-web1.png', type: 'web' },
-      { url: '/projects/pokeapi-mobile1.png', type: 'mobile' }
+      { url: '/projects/pokeapi-web2.png', type: 'web' },
+      { url: '/projects/pokeapi-web3.png', type: 'web' },
+      { url: '/projects/pokeapi-mobile1.png', type: 'mobile' },
+      { url: '/projects/pokeapi-mobile2.png', type: 'mobile' },
+      { url: '/projects/pokeapi-mobile3.png', type: 'mobile' }
     ],
     projectUrl: 'https://pokeapi.edgartorres.dev',
     githubUrl: 'https://github.com/EdgarTorreshdz/pokeangular-app',
@@ -158,7 +172,13 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
     },
     technologies: ['Laravel', 'SQL'],
     images: [
-      { url: '/projects/rpc.png', type: 'main' }
+      { url: '/projects/rpc.png', type: 'main' },
+      { url: '/projects/rpc-web1.png', type: 'web' },
+      { url: '/projects/rpc-web2.png', type: 'web' },
+      { url: '/projects/rpc-web3.png', type: 'web' },
+      { url: '/projects/rpc-mobile1.png', type: 'mobile' },
+      { url: '/projects/rpc-mobile2.png', type: 'mobile' },
+      { url: '/projects/rpc-mobile3.png', type: 'mobile' }
     ],
     projectUrl: 'http://regalos-personalizados-b12bcc15d468.herokuapp.com/',
     githubUrl: 'https://github.com/EdgarTorreshdz/regalos_personalizados_cancun',
