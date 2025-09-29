@@ -23,9 +23,9 @@ export class AboutComponent {
       image: '/assets/about-me.jpg',
       stats: [
         { number: '3+', label: this.t('about.stats.experience') },
-        { number: '15+', label: this.t('about.stats.projects') },
-        { number: '8+', label: this.t('about.stats.clients') },
-        { number: '12+', label: this.t('about.stats.technologies') }
+        { number: '12+', label: this.t('about.stats.projects') },
+        { number: '6+', label: this.t('about.stats.clients') },
+        { number: '8+', label: this.t('about.stats.technologies') }
       ],
       features: [
         {
