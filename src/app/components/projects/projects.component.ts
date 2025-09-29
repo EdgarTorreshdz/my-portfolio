@@ -90,14 +90,32 @@ export class ProjectsComponent implements OnInit {
     this.paginatedProjects = this.filteredProjects.slice(startIndex, startIndex + this.itemsPerPage);
   }
 
-  nextPage(): void { if (this.currentPage < this.totalPages) { this.currentPage++; this.updatePagination(); } }
-  prevPage(): void { if (this.currentPage > 1) { this.currentPage--; this.updatePagination(); } }
+  nextPage(): void {
+     if (this.currentPage < this.totalPages) { 
+      this.currentPage++; this.updatePagination();
+      this.scrollModalToTop();
+      } 
+    }
+    
+  prevPage(): void {
+     if (this.currentPage > 1) { 
+      this.currentPage--; this.updatePagination(); 
+      this.scrollModalToTop();
+     } 
+    }
 
   t(key: string) { return this.i18n.t(key); }
 
   // --- IMPORTANTE: quitar cualquier window.scrollTo({top:0}) ---
   openProjectModal(project: Project) {
-    // (Opcional) imitar tu header: llevar al inicio de la sección 'projects' con offset
+    this.scrollModalToTop();
+
+    this.selectedProject = project;
+    document.body.style.overflow = 'hidden'; // bloquea scroll del fondo
+    // No necesitas setTimeout aquí gracias al setter de @ViewChild
+  }
+
+  scrollModalToTop() {
     const appComponent: any = (window as any).appComponent;
     if (appComponent && typeof appComponent.scrollToSection === 'function') {
       appComponent.scrollToSection('projects'); // usa tu mismo método con offset de header
@@ -107,10 +125,6 @@ export class ProjectsComponent implements OnInit {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
-
-    this.selectedProject = project;
-    document.body.style.overflow = 'hidden'; // bloquea scroll del fondo
-    // No necesitas setTimeout aquí gracias al setter de @ViewChild
   }
 
   closeModal() {

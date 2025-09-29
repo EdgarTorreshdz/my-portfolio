@@ -74,7 +74,7 @@ export class I18nService {
           technicaltest: 'Prueba Técnica'
         },
         code: 'Código',
-        demo: 'Ver Demo',
+        demo: 'Ver',
         emptyTitle: 'No hay proyectos en esta categoría',
         emptyDescription: 'Prueba seleccionando otra categoría para ver más proyectos.'
       },
@@ -264,7 +264,7 @@ export class I18nService {
           technicaltest: 'TechnicalTest'
         },
         code: 'Code',
-        demo: 'View Demo',
+        demo: 'View',
         emptyTitle: 'No projects in this category',
         emptyDescription: 'Try selecting another category to see more projects.'
       },
