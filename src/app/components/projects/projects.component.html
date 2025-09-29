@@ -83,7 +83,7 @@
 <img 
   [src]="galleryImages[currentSlide]" 
   class="w-full max-h-[30vh] md:max-h-[40vh] object-contain mx-auto transition-transform duration-500"
-  [alt]="selectedProject && selectedProject.title ? selectedProject.title[i18n.getLang()] : 'Project image'">
+  [alt]="selectedProject && selectedProject.title ? selectedProject.title[i18n.getLang()] : 'Project image'" loading="lazy">
   </div>
 
   <!-- Botón anterior -->
