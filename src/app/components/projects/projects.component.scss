@@ -49,3 +49,24 @@
 .grid {
   align-items: stretch;
 }
+
+/* Fondo del modal */
+.fixed {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+button:focus {
+  outline: none;
+}
+
+.modal-panel {
+  max-height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;        // evita “arrastrar” el fondo en iOS
+  -webkit-overflow-scrolling: touch;   // scroll suave en iOS
+}

@@ -1,8 +1,13 @@
 <!-- ProjectCardComponent -->
-<div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 h-full flex flex-col">
-  <!-- Project Image -->
+<div (click)="openProject()"
+     class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 h-full flex flex-col">
+
+  <!-- Project Image (main) -->
   <div class="h-48 overflow-hidden flex-shrink-0">
-    <img [src]="project.imageUrl" [alt]="project.title[i18n.getLang()]" class="w-full h-full object-cover">
+    <img
+      [src]="mainImage?.url"
+      [alt]="project.title[i18n.getLang()]"
+      class="w-full h-full object-cover">
   </div>
 
   <!-- Project Content -->

@@ -1,31 +1,64 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../../shared/i18n.service';
 import { ProjectCardComponent } from '../../shared/project-card/project-card.component';
 import { Project } from '../../models/project';
 import { PROJECTS } from '../../data/projects.data';
+import { getTechnologiesClass } from '../../shared/utils/tech-colors';
 
 @Component({
   selector: 'app-projects',
-  templateUrl: './projects.component.html',
   standalone: true,
   imports: [CommonModule, ProjectCardComponent],
+  templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  // --- NUEVO: setter para capturar el panel cuando aparece ---
+  private _modalPanel?: ElementRef<HTMLDivElement>;
+  @ViewChild('modalPanel') set modalPanelRef(el: ElementRef<HTMLDivElement> | undefined) {
+    this._modalPanel = el;
+    if (el) {
+      // En cuanto se inserta el panel en el DOM, resetea el scroll interno
+      el.nativeElement.scrollTop = 0;
+      // Opcional: focus para evitar glitches en iOS
+      el.nativeElement.focus({ preventScroll: true });
+    }
+  }
+  private get modalPanel(): HTMLDivElement | null {
+    return this._modalPanel?.nativeElement ?? null;
+  }
+
   projects: Project[] = [];
   filteredProjects: Project[] = [];
   paginatedProjects: Project[] = [];
 
   categories: string[] = ['Todos', 'Frontend', 'Backend', 'Fullstack', 'TechnicalTest'];
-  selectedCategory: string = 'Todos';
+  selectedCategory = 'Todos';
+  activeTab: 'web' | 'mobile' = 'web';
 
-  // Paginación
-  currentPage: number = 1;
-  itemsPerPage: number = 4;
-  totalPages: number = 1;
+  currentPage = 1;
+  itemsPerPage = 4;
+  totalPages = 1;
+
+  selectedProject: Project | null = null;
+  getTechnologiesClass = getTechnologiesClass;
 
   constructor(public i18n: I18nService) {}
+
+  get mainImage(): string | undefined {
+    return this.selectedProject?.images.find(img => img.type === 'main')?.url;
+  }
+  get webImages(): string[] {
+    return this.selectedProject ? this.selectedProject.images.filter(i => i.type === 'web').map(i => i.url) : [];
+  }
+  get mobileImages(): string[] {
+    return this.selectedProject ? this.selectedProject.images.filter(i => i.type === 'mobile').map(i => i.url) : [];
+  }
+  get galleryImages(): string[] {
+    if (!this.selectedProject) return [];
+    return this.selectedProject.images.filter(img => img.type === this.activeTab).map(img => img.url);
+  }
 
   ngOnInit(): void {
     this.loadProjects();
@@ -36,20 +69,18 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
+  @HostListener('document:keydown.escape')
+  handleEscapeKey() { if (this.selectedProject) this.closeModal(); }
+
   loadProjects(): void {
-    this.projects = PROJECTS.map((p, index) => ({
-      ...p,
-      id: index + 1
-    }));
+    this.projects = PROJECTS.map((p, index) => ({ ...p, id: index + 1 }));
   }
 
   filterProjects(category: string = 'Todos'): void {
     this.selectedCategory = category;
-    if (category === 'Todos') {
-      this.filteredProjects = this.projects;
-    } else {
-      this.filteredProjects = this.projects.filter(project => project.category === category);
-    }
+    this.filteredProjects = category === 'Todos'
+      ? this.projects
+      : this.projects.filter(project => project.category === category);
     this.currentPage = 1;
     this.updatePagination();
   }
@@ -60,21 +91,34 @@ export class ProjectsComponent implements OnInit {
     this.paginatedProjects = this.filteredProjects.slice(startIndex, startIndex + this.itemsPerPage);
   }
 
-  nextPage(): void {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage++;
-      this.updatePagination();
+  nextPage(): void { if (this.currentPage < this.totalPages) { this.currentPage++; this.updatePagination(); } }
+  prevPage(): void { if (this.currentPage > 1) { this.currentPage--; this.updatePagination(); } }
+
+  t(key: string) { return this.i18n.t(key); }
+
+  // --- IMPORTANTE: quitar cualquier window.scrollTo({top:0}) ---
+  openProjectModal(project: Project) {
+    // (Opcional) imitar tu header: llevar al inicio de la sección 'projects' con offset
+    const appComponent: any = (window as any).appComponent;
+    if (appComponent && typeof appComponent.scrollToSection === 'function') {
+      appComponent.scrollToSection('projects'); // usa tu mismo método con offset de header
+    } else {
+      const element = document.getElementById('projects');
+      if(element){
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
+
+    this.selectedProject = project;
+    this.activeTab = 'web';
+    document.body.style.overflow = 'hidden'; // bloquea scroll del fondo
+    // No necesitas setTimeout aquí gracias al setter de @ViewChild
   }
 
-  prevPage(): void {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.updatePagination();
-    }
+  closeModal() {
+    this.selectedProject = null;
+    document.body.style.overflow = ''; // restaura scroll
   }
 
-  t(key: string) {
-    return this.i18n.t(key);
-  }
+
 }

@@ -47,7 +47,9 @@ export class AppComponent implements OnInit {
     private router: Router,
     private i18n: I18nService,
     private animationsService: AnimationsService
-  ) {}
+  ) {
+    (window as any).appComponent = this;
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {

@@ -12,7 +12,12 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Web platform for a film studio, showcasing its services, portfolio, and allowing users to contact for bookings.'
     },
     technologies: ['Laravel', 'Tailwind CSS', 'Heroku', 'PostgreSQL'],
-    imageUrl: '/projects/estudio.png',
+    images: [
+      { url: '/projects/estudio.png', type: 'main' },
+      { url: '/projects/estudio-web1.png', type: 'web' },
+      { url: '/projects/estudio-web2.png', type: 'web' },
+      { url: '/projects/estudio-mobile1.png', type: 'mobile' }
+    ],
     projectUrl: 'https://studio.edgartorres.dev/',
     githubUrl: '',
     category: 'Fullstack',
@@ -27,7 +32,11 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Web platform for a construction and real estate developer, showcasing its projects, services, and allowing users to contact the company.'
     },
     technologies: ['Laravel', 'Tailwind CSS', 'Heroku', 'PostgreSQL'],
-    imageUrl: '/projects/constructora.png',
+    images: [
+      { url: '/projects/constructora.png', type: 'main' },
+      { url: '/projects/constructora-web1.png', type: 'web' },
+      { url: '/projects/constructora-mobile1.png', type: 'mobile' }
+    ],
     projectUrl: 'https://constructora.edgartorres.dev/',
     githubUrl: 'https://github.com/EdgarTorreshdz/constructora-app',
     category: 'Fullstack',
@@ -42,7 +51,11 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'My personal website developed with Angular, showcasing my projects, skills, and experience as a fullstack developer.'
     },
     technologies: ['Angular', 'TypeScript', 'SCSS', 'HTML5', 'RxJS', 'AWS'],
-    imageUrl: '/projects/portfolio.png',
+    images: [
+      { url: '/projects/portfolio.png', type: 'main' },
+      { url: '/projects/portfolio-web1.png', type: 'web' },
+      { url: '/projects/portfolio-mobile1.png', type: 'mobile' }
+    ],
     projectUrl: 'https://edgartorres.dev',
     githubUrl: 'https://github.com/EdgarTorreshdz/my-portfolio',
     category: 'Frontend',
@@ -57,7 +70,11 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Angular application that consumes the PokéAPI to explore Pokémon, types, abilities, moves, and more. Responsive interface with modern design.'
     },
     technologies: ['Angular', 'TypeScript', 'CSS3', 'HTML5', 'RxJS', 'PokeAPI'],
-    imageUrl: '/projects/pokeapi.png',
+    images: [
+      { url: '/projects/pokeapi.png', type: 'main' },
+      { url: '/projects/pokeapi-web1.png', type: 'web' },
+      { url: '/projects/pokeapi-mobile1.png', type: 'mobile' }
+    ],
     projectUrl: 'https://pokeapi.edgartorres.dev',
     githubUrl: 'https://github.com/EdgarTorreshdz/pokeangular-app',
     category: 'Frontend',
@@ -72,7 +89,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Administrative platform for resource management with control panel and reports.'
     },
     technologies: ['Node', 'Angular', 'SQL Server', 'Azure'],
-    imageUrl: '/projects/hersotek.jpg',
+    images: [
+      { url: '/projects/hersotek.jpg', type: 'main' }
+    ],
     projectUrl: 'https://hersotek.com/',
     githubUrl: '#',
     category: 'Fullstack'
@@ -87,7 +106,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Administrative applications for resource management and internal processes.'
     },
     technologies: ['.NET', 'Angular', 'Blazor', 'SQL', 'AWS'],
-    imageUrl: '/projects/pricetravel.png',
+    images: [
+      { url: '/projects/pricetravel.png', type: 'main' }
+    ],
     projectUrl: 'https://www.pricetravel.com/',
     githubUrl: '#',
     category: 'FullStack'
@@ -102,7 +123,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Point of sale system with inventory management, sales, and financial reporting.'
     },
     technologies: ['.NET', 'VueJS', 'SQL Server'],
-    imageUrl: '/projects/grupoultra.png',
+    images: [
+      { url: '/projects/grupoultra.png', type: 'main' }
+    ],
     projectUrl: 'https://www.grupoultra.com/',
     githubUrl: '#',
     category: 'Fullstack'
@@ -117,7 +140,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Complete e-commerce platform with shopping cart and payment gateway.'
     },
     technologies: ['Laravel', 'PHP', 'Node', 'MySQL', 'SQL', 'AWS'],
-    imageUrl: '/projects/novusred.png',
+    images: [
+      { url: '/projects/novusred.png', type: 'main' }
+    ],
     projectUrl: 'https://novusred.mx/',
     githubUrl: '#',
     category: 'Fullstack'
@@ -132,7 +157,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Administrative panel, charts, sales.'
     },
     technologies: ['Laravel', 'SQL'],
-    imageUrl: '/projects/rpc.png',
+    images: [
+      { url: '/projects/rpc.png', type: 'main' }
+    ],
     projectUrl: 'http://regalos-personalizados-b12bcc15d468.herokuapp.com/',
     githubUrl: 'https://github.com/EdgarTorreshdz/regalos_personalizados_cancun',
     category: 'Backend'
@@ -147,7 +174,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Control panel with metrics and interactive charts for data analysis.'
     },
     technologies: ['Laravel', 'SQL'],
-    imageUrl: '/projects/boatsbooking.png',
+    images: [
+      { url: '/projects/boatsbooking.png', type: 'main' }
+    ],
     projectUrl: 'https://boatsbooking.com/',
     githubUrl: '#',
     category: 'Frontend'
@@ -162,7 +191,9 @@ export const PROJECTS: Omit<Project, 'id'>[] = [
       en: 'Web application with user authentication and CRUD operations for product management. Divided into frontend and backend for better maintenance.'
     },
     technologies: ['Angular', 'SQL', 'Node'],
-    imageUrl: '/projects/products-app.png',
+    images: [
+      { url: '/projects/products-app.png', type: 'main' }
+    ],
     projectUrl: 'https://products-app.edgartorres.dev/',
     githubUrl: '#',
     category: 'TechnicalTest'

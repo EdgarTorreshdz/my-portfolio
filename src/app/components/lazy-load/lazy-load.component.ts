@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     .lazy-load-container {
-      min-height: 100px;
     }
     .loading-placeholder {
       display: flex;

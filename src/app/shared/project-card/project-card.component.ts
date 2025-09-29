@@ -1,8 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../i18n.service';
-import { Project } from '../../models/project';
-
+import { Project, ProjectImage } from '../../models/project';
 
 @Component({
   selector: 'app-project-card',
@@ -13,8 +12,17 @@ import { Project } from '../../models/project';
 })
 export class ProjectCardComponent {
   @Input() project!: Project;
+  @Output() openModal = new EventEmitter<Project>();
 
-  constructor(public i18n: I18nService) { }
+  constructor(public i18n: I18nService) {}
+
+  openProject() {
+    this.openModal.emit(this.project);
+  }
+
+  get mainImage(): ProjectImage | undefined {
+    return this.project.images.find(img => img.type === 'main');
+  }
 
   getTechnologiesClass(index: number): string {
     const colors = [
