@@ -1,71 +1,50 @@
-// Variables
-$bg-dark: #1f2937;
-$bg-darker: #111827;
-$text-light: #f3f4f6;
-$text-gray: #9ca3af;
-$primary: #3b82f6;
-$primary-hover: #2563eb;
-
-// Mixins
-@mixin transition($property: all, $duration: 200ms, $easing: ease-in-out) {
-  transition: $property $duration $easing;
-}
-
-// Footer Styles
 .footer {
-  background: linear-gradient(135deg, $bg-darker 0%, $bg-dark 100%);
-  color: $text-light;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  background: linear-gradient(135deg, #0f172a, #1f2937);
+  color: #f3f4f6;
+  padding: 3rem 1.5rem 2rem;
   margin-top: auto;
 
-  &-container {
-    max-width: 1200px;
+  .footer-container {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 1rem;
   }
 
-  &-grid {
+  .footer-grid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 2rem;
+    grid-template-columns: 1fr;
     margin-bottom: 2rem;
 
     @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: 1024px) {
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      grid-template-columns: 2fr 1fr 1fr;
     }
   }
 
-  // Brand Section
-  &-brand {
+  // Brand
+  .footer-brand {
     .footer-title {
-      font-size: 1.875rem;
-      font-weight: bold;
-      color: $primary;
-      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #3b82f6;
+      margin-bottom: 0.5rem;
     }
-
     .footer-description {
-      color: $text-gray;
+      font-size: 0.95rem;
+      color: #9ca3af;
       line-height: 1.6;
-      margin-bottom: 1.5rem;
     }
   }
 
   // Section Titles
-  &-subtitle {
-    font-size: 1.125rem;
+  .footer-subtitle {
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: $text-light;
+    color: #f3f4f6;
   }
 
   // Links
-  &-links {
+  .footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -73,160 +52,80 @@ $primary-hover: #2563eb;
     li {
       margin-bottom: 0.5rem;
     }
-  }
-
-  &-link {
-    color: $text-gray;
-    text-decoration: none;
-    @include transition(color);
-
-    &:hover {
-      color: $primary;
-    }
-  }
-
-  // Technologies
-  &-tech {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    &-item {
-      color: $text-gray;
-      margin-bottom: 0.5rem;
-      position: relative;
-      padding-left: 1rem;
-
-      &::before {
-        content: "▹";
-        color: $primary;
-        position: absolute;
-        left: 0;
+    .footer-link {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.3s;
+      &:hover {
+        color: #3b82f6;
       }
     }
   }
 
-  // Contact Info
-  .contact {
-    &-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    &-item {
-      display: flex;
-      align-items: center;
-      color: $text-gray;
-      gap: 0.5rem;
-    }
-
-    &-icon {
-      font-size: 1.125rem;
-    }
+  // Contact & Social
+  .contact-item {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-top: 0.5rem;
   }
 
-  // Social Links
-  .social {
-    &-links {
-      display: flex;
-      gap: 1rem;
-    }
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
 
-    &-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .social-link {
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
-      color: $text-gray;
-      text-decoration: none;
-      @include transition(all);
-
-      &:hover {
-        background: $primary;
-        color: white;
-        transform: translateY(-2px);
-      }
-
-      // Social icons using background images or pseudo-elements
-      &--github::before {
-        content: "🐱";
-      }
-
-      &--linkedin::before {
-        content: "💼";
-      }
-
-      &--twitter::before {
-        content: "🐦";
-      }
-
-      &--instagram::before {
-        content: "📸";
-      }
-    }
-  }
-
-  // Bottom Section
-  &-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1.5rem;
-
-    &-content {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
       align-items: center;
-
-      @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: between;
-      }
-    }
-  }
-
-  &-copyright {
-    color: $text-gray;
-    font-size: 0.875rem;
-    margin: 0;
-  }
-
-  &-legal {
-    display: flex;
-    gap: 1.5rem;
-
-    &-link {
-      color: $text-gray;
-      text-decoration: none;
-      font-size: 0.875rem;
-      @include transition(color);
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
 
       &:hover {
-        color: $primary;
+        background: #3b82f6;
+        color: white;
+        transform: translateY(-3px);
       }
+
+      &--github::before { content: "🐱"; }
+      &--linkedin::before { content: "💼"; }
     }
   }
 
-  // Accessibility
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  // Bottom
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    text-align: center;
+    .footer-copy {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+  }
+}
+.footer-grid {
+  text-align: center; // centra texto en mobile
+  justify-items: center; // centra columnas en grid
+
+  @media (min-width: 768px) {
+    text-align: left; // en desktop vuelve al layout normal
+    justify-items: start;
   }
 }
 
-// Dark mode support
-@media (prefers-color-scheme: dark) {
-  .footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+.footer-section, 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    align-items: flex-start;
   }
 }

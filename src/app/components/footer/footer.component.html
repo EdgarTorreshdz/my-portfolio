@@ -4,22 +4,10 @@
       
       <!-- Brand -->
       <div class="footer-brand">
-        <h3 class="footer-title">{{ t('footer.brand.name') }}</h3>
+        <h3 class="footer-title">Edgar Torres</h3>
         <p class="footer-description">
           {{ t('footer.brand.description') }}
         </p>
-        <div class="social-links">
-          <a
-            *ngFor="let social of socialLinks"
-            [href]="social.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link"
-            [class]="'social-link--' + social.icon"
-            [attr.aria-label]="social.name">
-            <span class="sr-only">{{ social.name }}</span>
-          </a>
-        </div>
       </div>
 
       <!-- Quick Links -->
@@ -27,32 +15,37 @@
         <h4 class="footer-subtitle">{{ t('footer.links.title') }}</h4>
         <ul class="footer-links">
           <li *ngFor="let link of quickLinks">
-            <a
-              (click)="scrollToSection(link.section, $event)"
-              class="footer-link cursor-pointer">
+            <a (click)="scrollToSection(link.section, $event)" class="footer-link cursor-pointer">
               {{ link.label }}
             </a>
           </li>
         </ul>
       </div>
 
-      <!-- Contact Info -->
+      <!-- Social + Contact -->
       <div class="footer-section">
         <h4 class="footer-subtitle">{{ t('footer.contact.title') }}</h4>
-        <div class="contact-info">
-          <p class="contact-item">📧 {{ t('footer.contact.email') }}</p>
-          <p class="contact-item">📍 {{ t('footer.contact.location') }}</p>
+        <div class="social-links">
+          <a *ngFor="let social of socialLinks"
+             [href]="social.url"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="social-link"
+             [class]="'social-link--' + social.icon"
+             [attr.aria-label]="social.name">
+            <span class="sr-only">{{ social.name }}</span>
+          </a>
         </div>
+        <p class="contact-item">📧 {{ t('footer.contact.email') }}</p>
+        <p class="contact-item">📍 {{ t('footer.contact.location') }}</p>
       </div>
     </div>
 
-    <!-- Bottom Bar -->
+    <!-- Bottom -->
     <div class="footer-bottom">
-      <div class="footer-bottom-content">
-        <p class="footer-copyright">
-          © {{ currentYear }} Edgar Torres. {{ t('footer.rights') }}
-        </p>
-      </div>
+      <p class="footer-copy">
+        © {{ currentYear }} Edgar Torres · {{ t('footer.rights') }}
+      </p>
     </div>
   </div>
 </footer>
