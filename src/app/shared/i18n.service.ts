@@ -76,7 +76,12 @@ export class I18nService {
         code: 'Código',
         demo: 'Ver',
         emptyTitle: 'No hay proyectos en esta categoría',
-        emptyDescription: 'Prueba seleccionando otra categoría para ver más proyectos.'
+        emptyDescription: 'Prueba seleccionando otra categoría para ver más proyectos.',
+        pagination: {
+          prev: "Anterior",
+          next: "Siguiente",
+          page: "Página"
+        }
       },
       skills: {
         title: 'Mis Habilidades',
@@ -267,7 +272,12 @@ export class I18nService {
         code: 'Code',
         demo: 'View',
         emptyTitle: 'No projects in this category',
-        emptyDescription: 'Try selecting another category to see more projects.'
+        emptyDescription: 'Try selecting another category to see more projects.',
+        pagination: {
+          prev: "Previous",
+          next: "Next",
+          page: "Page"
+        }
       },
       skills: {
         title: 'My Skills',

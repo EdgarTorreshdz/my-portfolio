@@ -29,26 +29,38 @@
       </app-project-card>
     </div>
 
-    <!-- Paginación -->
-    <div class="flex justify-center items-center gap-2 mt-6">
-      <button
-        (click)="prevPage()"
-        [disabled]="currentPage === 1"
-        class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded hover:bg-primary hover:text-white disabled:opacity-50">
-        Anterior
-      </button>
+<div class="flex justify-center items-center gap-2 mt-6">
+  <!-- Botón Anterior -->
+  <button
+    (click)="prevPage()"
+    [disabled]="currentPage === 1"
+    class="min-w-[100px] px-4 py-2 text-center 
+           rounded-l-full bg-gray-200 dark:bg-gray-700 
+           text-gray-700 dark:text-gray-300 
+           hover:bg-primary hover:text-white 
+           disabled:opacity-50 transition">
+    {{ t('projects.pagination.prev') }}
+  </button>
 
-      <span class="px-3 py-1 text-gray-700 dark:text-gray-300">
-        {{ currentPage }} / {{ totalPages }}
-      </span>
+  <!-- Texto central -->
+  <span class="min-w-[120px] px-4 py-2 text-center 
+              bg-primary text-white font-semibold rounded">
+    {{ t('projects.pagination.page') }} {{ currentPage }} / {{ totalPages }}
+  </span>
 
-      <button
-        (click)="nextPage()"
-        [disabled]="currentPage === totalPages"
-        class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded hover:bg-primary hover:text-white disabled:opacity-50">
-        Siguiente
-      </button>
-    </div>
+  <!-- Botón Siguiente -->
+  <button
+    (click)="nextPage()"
+    [disabled]="currentPage === totalPages"
+    class="min-w-[100px] px-4 py-2 text-center 
+           rounded-r-full bg-gray-200 dark:bg-gray-700 
+           text-gray-700 dark:text-gray-300 
+           hover:bg-primary hover:text-white 
+           disabled:opacity-50 transition">
+    {{ t('projects.pagination.next') }}
+  </button>
+</div>
+
 
     <!-- Empty State -->
     <div *ngIf="filteredProjects.length === 0" class="text-center py-12">
