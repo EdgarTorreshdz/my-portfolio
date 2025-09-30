@@ -82,3 +82,67 @@ $primary-dark: #1E3A8A;
 .placeholder-icon {
   @apply w-1/3 h-1/3 opacity-80;
 }
+
+.hero-subtitle {
+  @apply text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #2D4D90;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.hero-stat-number {
+  @apply block text-3xl font-bold text-primary dark:text-primary-dark mb-1 transition-transform;
+}
+
+.hero-stat-number:hover {
+  transform: scale(1.2) rotate(-2deg);
+}
+
+.placeholder-image {
+  @apply w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+/* ----- Typing effect ----- */
+.typing {
+  display: inline-block;         /* 🔑 mide solo el contenido */
+  overflow: hidden;
+  white-space: nowrap;           /* evita saltos de línea */
+  border-right: 3px solid $primary;
+  width: 0;                      /* inicia en 0 */
+  --typing-width: 0px;           /* se rellena en TS */
+}
+
+/* Solo esta clase aplica la animación. La quitamos/ponemos para reiniciar */
+.typing-animate {
+  animation: typing 2.8s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+/* el span interno es lo que medimos */
+.typing .typing-content {
+  display: inline-block;
+}
+
+/* Usa la variable runtime */
+@keyframes typing {
+  from { width: 0; }
+  to   { width: var(--typing-width); }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}

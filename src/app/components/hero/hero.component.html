@@ -1,45 +1,56 @@
 <section class="hero pb-10">
   <div class="hero-container pt-10">
     <div class="hero-content">
-      <div class="hero-text">
+      <!-- Texto -->
+      <div class="hero-text animate-fade-in-up">
         <h1>
           <span class="hero-greeting">{{ t('hero.title') }}</span>
           <span class="hero-name">Edgar</span>
         </h1>
 
-        <h2 class="hero-subtitle">{{ t('hero.subtitle') }}</h2>
+        <!-- Subtítulo con efecto typing -->
+        <h2 #subtitleEl class="hero-subtitle typing typing-animate">
+          <span class="typing-content">{{ t('hero.subtitle') }}</span>
+        </h2>
 
-        <p class="hero-description">
+        <p class="hero-description fade-in-element">
           {{ t('hero.description') }}
         </p>
 
+        <!-- Botones con animación stagger -->
         <div class="hero-actions">
-          <a href="#projects" class="hero-button hero-button--primary">
+          <a href="#projects"
+             class="hero-button hero-button--primary animate-fade-in-up"
+             style="animation-delay: 0.3s">
             {{ t('hero.btnProjects') }}
           </a>
-          <a href="#contact" class="hero-button hero-button--secondary">
+          <a href="#contact"
+             class="hero-button hero-button--secondary animate-fade-in-up"
+             style="animation-delay: 0.5s">
             {{ t('hero.btnContact') }}
           </a>
         </div>
 
+        <!-- Stats con stagger -->
         <div class="hero-stats">
-          <div class="hero-stat">
+          <div class="hero-stat animate-fade-in-up" style="animation-delay: 0.2s">
             <span class="hero-stat-number">3+</span>
             <span class="hero-stat-label">{{ t('hero.experience') }}</span>
           </div>
-          <div class="hero-stat">
+          <div class="hero-stat animate-fade-in-up" style="animation-delay: 0.4s">
             <span class="hero-stat-number">12+</span>
             <span class="hero-stat-label">{{ t('hero.projects') }}</span>
           </div>
-          <div class="hero-stat">
+          <div class="hero-stat animate-fade-in-up" style="animation-delay: 0.6s">
             <span class="hero-stat-number">100%</span>
             <span class="hero-stat-label">{{ t('hero.clients') }}</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="placeholder-image">
+      <!-- Imagen flotante -->
+      <div class="hero-visual animate-fade-in-right">
+        <div class="placeholder-image float">
           <img src="/images/pixel.svg" alt="Logo" class="h-auto" />
         </div>
       </div>
