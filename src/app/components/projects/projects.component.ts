@@ -15,7 +15,7 @@ import { getTechnologiesClass } from '../../shared/utils/tech-colors';
 })
 export class ProjectsComponent implements OnInit {
   currentSlide = 0;
-
+  lightboxOpen = false;
   lightboxIndex: number | null = null;
   // --- NUEVO: setter para capturar el panel cuando aparece ---
   private _modalPanel?: ElementRef<HTMLDivElement>;
@@ -148,4 +148,48 @@ prevSlide() {
 goToSlide(index: number) {
   this.currentSlide = index;
 }
+
+openLightbox() {
+  this.lightboxOpen = true;
+  document.body.style.overflow = 'hidden'; // Bloquear scroll del fondo
+}
+
+closeLightbox() {
+  this.lightboxOpen = false;
+  document.body.style.overflow = ''; // Restaurar scroll
+}
+
+@HostListener('document:keydown.escape')
+onEscape() {
+  if (this.lightboxOpen) {
+    this.closeLightbox();
+  } else if (this.selectedProject) {
+    this.closeModal();
+  }
+}
+
+touchStartX = 0;
+touchEndX = 0;
+
+onTouchStart(event: TouchEvent) {
+  this.touchStartX = event.changedTouches[0].screenX;
+}
+
+onTouchEnd(event: TouchEvent) {
+  this.touchEndX = event.changedTouches[0].screenX;
+  this.handleSwipe();
+}
+
+handleSwipe() {
+  const deltaX = this.touchEndX - this.touchStartX;
+
+  if (Math.abs(deltaX) > 50) { // umbral mínimo
+    if (deltaX > 0) {
+      this.prevSlide(); // swipe a la derecha → imagen anterior
+    } else {
+      this.nextSlide(); // swipe a la izquierda → imagen siguiente
+    }
+  }
+}
+
 }
