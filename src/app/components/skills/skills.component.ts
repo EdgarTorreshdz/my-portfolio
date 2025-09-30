@@ -66,7 +66,6 @@ export class SkillsComponent implements OnInit, OnDestroy {
   constructor(public i18n: I18nService) { }
 
   ngOnInit(): void {
-    console.log('Skills iniciando');
     this.updateSoftSkills();
 
     // Suscribirse a cambios de idioma

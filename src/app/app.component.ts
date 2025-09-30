@@ -68,7 +68,6 @@ export class AppComponent implements OnInit {
 
   // Método llamado cuando un componente se carga
   onComponentLoaded(sectionId: string) {
-    console.log(`Component ${sectionId} loaded`);
     this.loadedComponents.add(sectionId);
   }
 
