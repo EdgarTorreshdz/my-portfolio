@@ -19,8 +19,8 @@
         </p>
 
         <!-- Stats -->
-        <div class="about-stats grid grid-cols-2 gap-4 mt-8 mb-8">
-          <div *ngFor="let stat of aboutData.stats" class="about-stat">
+        <div  class="about-stats grid grid-cols-2 gap-4 mt-8 mb-8">
+          <div *ngFor="let stat of aboutData.stats" class="animate-bounce about-stat">
             <span class="stat-number">{{ stat.number }}</span>
             <span class="stat-label">{{ stat.label }}</span>
           </div>
@@ -52,7 +52,7 @@
         <h3 class="details-title">{{ t('about.storyTitle') }}</h3>
         <div class="space-y-6 mt-6">
           <div *ngFor="let exp of aboutData.experience"
-               class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+               class="animate-bounce2 bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
             <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
               {{ exp.title }}
             </h4>
