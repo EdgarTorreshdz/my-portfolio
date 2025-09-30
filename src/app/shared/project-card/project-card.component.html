@@ -4,7 +4,7 @@
             transition-transform duration-300 hover:scale-105 h-full flex flex-col cursor-pointer">
 
   <!-- Project Image (main) -->
-  <div class="h-48 overflow-hidden flex-shrink-0">
+  <div class="h-100 overflow-hidden flex-shrink-0">
     <img
       [src]="mainImage?.url"
       [alt]="project.title[i18n.getLang()]"
@@ -13,15 +13,13 @@
 
   <!-- Project Content -->
   <div class="p-6 flex flex-col flex-grow">
-    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2 text-center">
       {{ project.title[i18n.getLang()] }}
     </h3>
-    <p class="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
-      {{ project.description[i18n.getLang()] }}
-    </p>
+
 
     <!-- Technologies -->
-    <div class="flex flex-wrap gap-2 mb-4">
+    <div class="flex flex-wrap gap-2 mb-4 justify-center">
       <span *ngFor="let tech of project.technologies; let i = index"
             [class]="'text-xs font-semibold px-2.5 py-0.5 rounded ' + getTechnologiesClass(i)">
         {{ tech }}
