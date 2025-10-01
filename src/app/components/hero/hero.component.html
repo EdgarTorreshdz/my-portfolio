@@ -17,19 +17,23 @@
           {{ t('hero.description') }}
         </p>
 
-        <!-- Botones con animación stagger -->
-        <div class="hero-actions">
+        <div class="hero-actions flex flex-wrap gap-4 justify-center pb-6">
           <a href="#projects"
-             class="hero-button hero-button--primary animate-fade-in-up"
-             style="animation-delay: 0.3s">
+            class="hero-button hero-button--primary flex-1 text-center text-sm md:text-base">
             {{ t('hero.btnProjects') }}
           </a>
+
           <a href="#contact"
-             class="hero-button hero-button--secondary animate-fade-in-up"
-             style="animation-delay: 0.5s">
+            class="hero-button hero-button--secondary flex-1 text-center text-sm md:text-base">
             {{ t('hero.btnContact') }}
           </a>
+
+          <a [href]="cvPath" download
+            class="hero-button hero-button--primary flex-1 text-center text-sm md:text-base">
+            {{ t('hero.btnCV') }}
+          </a>
         </div>
+
 
         <!-- Stats con stagger -->
         <div class="hero-stats">

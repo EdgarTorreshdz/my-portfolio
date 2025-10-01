@@ -21,11 +21,12 @@ export class I18nService {
         closeMenu: 'Cerrar menú'
       },
       hero: {
-        title: 'Hola, soy',
+        title: 'Hola, soy ',
         subtitle: 'Desarrollador de Software',
         description: 'Especializado en .NET, Angular, Laravel y desarrollo en AWS, AZURE con más de 3 años de experiencia',
-        btnProjects: 'Ver proyectos',
+        btnProjects: 'Proyectos',
         btnContact: 'Contactar',
+        btnCV: 'Mi CV',
         experience: 'Años de experiencia',
         projects: 'Proyectos completados',
         languages: 'Idiomas',
@@ -213,11 +214,12 @@ export class I18nService {
         closeMenu: 'Close menu'
       },
       hero: {
-        title: 'Hi, I am',
+        title: 'Hi, I am ',
         subtitle: 'Software Developer',
         description: 'Specialized in .NET, Angular, Laravel and AWS, AZURE development with over 3 years of experience',
-        btnProjects: 'View projects',
+        btnProjects: 'Projects',
         btnContact: 'Contact',
+        btnCV: 'My CV',
         experience: 'Years of experience',
         projects: 'Completed projects',
         languages: 'Languages',

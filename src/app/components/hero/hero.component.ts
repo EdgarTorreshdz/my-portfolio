@@ -20,7 +20,6 @@ export class HeroComponent implements AfterViewInit {
 
     // volver a medir/reiniciar cuando cambie el idioma
     this.i18n.langChange.subscribe(() => {
-      // espera a que Angular re-renderice el texto traducido
       setTimeout(() => this.updateTypingWidthAndRestart());
     });
   }
@@ -28,7 +27,7 @@ export class HeroComponent implements AfterViewInit {
   // Opcional: si cambian tamaños por responsive, re-mide
   @HostListener('window:resize')
   onResize() {
-    this.updateTypingWidthAndRestart(false); // sin reiniciar animación si no quieres
+    this.updateTypingWidthAndRestart(false);
   }
 
   private updateTypingWidthAndRestart(restart: boolean = true) {
@@ -38,16 +37,11 @@ export class HeroComponent implements AfterViewInit {
     const span = h2.querySelector('.typing-content') as HTMLElement | null;
     if (!span) return;
 
-    // Medimos el ancho renderizado del contenido
     const width = span.offsetWidth;
-
-    // Escribimos la variable CSS usada en @keyframes
     h2.style.setProperty('--typing-width', `${width}px`);
 
     if (restart) {
-      // Reiniciar la animación quitando/poniendo la clase
       h2.classList.remove('typing-animate');
-      // forzamos reflow para que el navegador "note" el cambio
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       h2.offsetWidth;
       h2.classList.add('typing-animate');
@@ -56,4 +50,12 @@ export class HeroComponent implements AfterViewInit {
 
   t(key: string) { return this.i18n.t(key); }
   changeLang(lang: 'es' | 'en') { this.i18n.setLang(lang); }
+
+  // 👇 Nueva función: ruta del CV según idioma
+  get cvPath(): string {
+    const lang = this.i18n.getLang();
+    return lang === 'en'
+      ? '/docs/CV_en_Edgar_Torres.pdf'
+      : '/docs/CV_es_Edgar_Torres.pdf';
+  }
 }
