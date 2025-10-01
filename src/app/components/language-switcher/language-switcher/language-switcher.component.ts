@@ -9,24 +9,19 @@ import { I18nService } from '../../../shared/i18n.service';
   imports: [CommonModule],
   template: `
     <div class="lang-switcher">
-      <button
-        *ngFor="let lang of langs"
-        (click)="changeLang(lang)"
-        [class.active]="i18n.getLang() === lang"
-      >
-        {{ lang.toUpperCase() }}
+      <button (click)="toggleLang()">
+        {{ i18n.getLang().toUpperCase() }}
       </button>
     </div>
   `,
   styleUrls: ['./language-switcher.component.scss']
 })
 export class LanguageSwitcherComponent {
-  langs: ('es' | 'en')[] = ['es', 'en'];
-
   constructor(public i18n: I18nService, private router: Router) {}
 
-  changeLang(lang: 'es' | 'en') {
-    this.i18n.setLang(lang);
-    this.router.navigate([`/${lang}/home`]);
+  toggleLang() {
+    const newLang = this.i18n.getLang() === 'es' ? 'en' : 'es';
+    this.i18n.setLang(newLang);
+    this.router.navigate([`/${newLang}/home`]);
   }
 }

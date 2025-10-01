@@ -28,7 +28,7 @@ export class I18nService {
         btnContact: 'Contactar',
         experience: 'Años de experiencia',
         projects: 'Proyectos completados',
-        clients: 'Clientes satisfechos'
+        languages: 'Idiomas'
       },
       contact: {
         title: 'Contacto',
@@ -224,7 +224,7 @@ export class I18nService {
         btnContact: 'Contact',
         experience: 'Years of experience',
         projects: 'Completed projects',
-        clients: 'Happy clients'
+        languages: 'Languages'
       },
       contact: {
         title: 'Contact',
