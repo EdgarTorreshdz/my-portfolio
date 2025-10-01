@@ -33,33 +33,10 @@ export class SkillsComponent implements OnInit, OnDestroy {
     { name: 'Express.js', percentage: 70, color: 'primary' }
   ];
 
-  // Habilidades por categorías
-  languagesSkills: Skill[] = [
-    { name: 'C#', percentage: 88, color: 'accent' },
-    { name: 'TypeScript', percentage: 85, color: 'accent' },
-    { name: 'JavaScript', percentage: 88, color: 'accent' },
-    { name: 'PHP', percentage: 75, color: 'accent' }
-  ];
+  // Idiomas
+  languageSkills: Skill[] = [];
 
-  frameworksSkills: Skill[] = [
-    { name: '.NET', percentage: 90, color: 'primary' },
-    { name: 'Angular', percentage: 85, color: 'primary' },
-    { name: 'Laravel', percentage: 70, color: 'primary' },
-    { name: 'Node.js', percentage: 75, color: 'primary' },
-    { name: 'Express.js', percentage: 70, color: 'primary' }
-  ];
-
-  databasesSkills: Skill[] = [
-    { name: 'SQL Server', percentage: 85, color: 'secondary' },
-    { name: 'MySQL', percentage: 80, color: 'secondary' },
-  ];
-
-  cloudSkills: Skill[] = [
-    { name: 'AWS', percentage: 75, color: 'warning' },
-    { name: 'Azure', percentage: 70, color: 'warning' },
-    { name: 'Vercel', percentage: 65, color: 'warning' }
-  ];
-
+  // Soft Skills
   softSkills: Skill[] = [];
   private langChangeSubscription!: Subscription;
 
@@ -67,10 +44,11 @@ export class SkillsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.updateSoftSkills();
+    this.updateLanguageSkills();
 
-    // Suscribirse a cambios de idioma
     this.langChangeSubscription = this.i18n.langChange.subscribe(() => {
       this.updateSoftSkills();
+      this.updateLanguageSkills();
     });
   }
 
@@ -91,11 +69,18 @@ export class SkillsComponent implements OnInit, OnDestroy {
     ];
   }
 
+  private updateLanguageSkills(): void {
+    this.languageSkills = [
+      { name: this.t('about.languages.spanish'), percentage: 100, color: 'success' },
+      { name: this.t('about.languages.english'), percentage: 75, color: 'success' }
+    ];
+  }
+
+
   t(key: string): string {
     return this.i18n.t(key);
   }
 
-  // Método para obtener el nombre de la categoría traducida
   getCategoryTitle(category: string): string {
     return this.t(`skills.${category}`);
   }

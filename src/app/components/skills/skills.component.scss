@@ -159,3 +159,8 @@ $gray-800: #1f2937;
     }
   }
 }
+// skill-bar.component.scss
+
+.skill-progress.success {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%); // verde
+}
