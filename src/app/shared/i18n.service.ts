@@ -28,7 +28,13 @@ export class I18nService {
         btnContact: 'Contactar',
         experience: 'Años de experiencia',
         projects: 'Proyectos completados',
-        languages: 'Idiomas'
+        languages: 'Idiomas',
+        stats: {
+          experience: 'Años de experiencia',
+          projects: 'Proyectos completados',
+          clients: 'Clientes satisfechos',
+          technologies: 'Tecnologías dominadas'
+        },
       },
       contact: {
         title: 'Contacto',
@@ -102,12 +108,6 @@ export class I18nService {
         longDescription: 'Mi pasión por el desarrollo de software comenzó cuando creé mi primera aplicación. Desde entonces, he estado constantemente aprendiendo y mejorando mis habilidades. Disfruto transformando ideas complejas en soluciones escalables y eficientes.',
         storyTitle: 'Experiencia Profesional',
         passionStatement: 'Me encanta trabajar en proyectos desafiantes que me permitan crecer profesionalmente y aportar valor a través de soluciones innovadoras.',
-        stats: {
-          experience: 'Años de experiencia',
-          projects: 'Proyectos completados',
-          clients: 'Clientes satisfechos',
-          technologies: 'Tecnologías dominadas'
-        },
         experience: {
           hersotek: {
             title: 'Full Stack Developer - Hersotek',
@@ -220,7 +220,13 @@ export class I18nService {
         btnContact: 'Contact',
         experience: 'Years of experience',
         projects: 'Completed projects',
-        languages: 'Languages'
+        languages: 'Languages',
+        stats: {
+          experience: 'Years of experience',
+          projects: 'Completed projects',
+          clients: 'Satisfied clients',
+          technologies: 'Mastered technologies'
+        },
       },
       contact: {
         title: 'Contact',
@@ -294,12 +300,7 @@ export class I18nService {
         longDescription: 'My passion for software development began when I created my first application. Since then, I have been constantly learning and improving my skills. I enjoy transforming complex ideas into scalable and efficient solutions.',
         storyTitle: 'Professional Experience',
         passionStatement: 'I love working on challenging projects that allow me to grow professionally and add value through innovative solutions.',
-        stats: {
-          experience: 'Years of experience',
-          projects: 'Completed projects',
-          clients: 'Satisfied clients',
-          technologies: 'Mastered technologies'
-        },
+        
         experience: {
           hersotek: {
             title: 'Full Stack Developer - Hersotek',

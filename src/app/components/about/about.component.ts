@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SkillsComponent } from '../skills/skills.component';
 import { I18nService } from '../../shared/i18n.service';
@@ -10,41 +10,36 @@ import { I18nService } from '../../shared/i18n.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit {
   constructor(public i18n: I18nService) {}
 
-  // Datos que se traducen dinámicamente
+  ngAfterViewInit() {
+    const cards = document.querySelectorAll('.reveal-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  }
+
+  // Datos traducidos dinámicamente
   get aboutData() {
     return {
       title: this.t('about.title'),
       subtitle: this.t('about.subtitle'),
       description: this.t('about.description'),
       longDescription: this.t('about.longDescription'),
-      image: '/assets/about-me.jpg',
-      stats: [
-        { number: '3+', label: this.t('about.stats.experience') },
-        { number: '12+', label: this.t('about.stats.projects') },
-        { number: '6+', label: this.t('about.stats.clients') },
-        { number: '8+', label: this.t('about.stats.technologies') }
-      ],
-      features: [
-        {
-          icon: '🚀',
-          title: this.t('about.features.performance.title'),
-          description: this.t('about.features.performance.description')
-        },
-        {
-          icon: '📊',
-          title: this.t('about.features.scalable.title'),
-          description: this.t('about.features.scalable.description')
-        },
-        {
-          icon: '⚡',
-          title: this.t('about.features.modern.title'),
-          description: this.t('about.features.modern.description')
-        }
-      ],
-      // Experiencia profesional
+      education: {
+        title: this.t('about.education.title'),
+        items: [
+          { degree: this.t('about.education.degree'), university: this.t('about.education.university'), license: this.t('about.education.license') },
+          { degree: this.t('about.education.tsu'), university: this.t('about.education.university') }
+        ]
+      },
       experience: [
         {
           title: this.t('about.experience.hersotek.title'),
@@ -70,33 +65,9 @@ export class AboutComponent {
           description: this.t('about.experience.novusred.description'),
           technologies: ['Laravel', 'PHP', 'VueJS', 'SQL', 'AWS']
         }
-      ],
-      // Educación
-      education: {
-        title: this.t('about.education.title'),
-        items: [
-          {
-            degree: this.t('about.education.degree'),
-            university: this.t('about.education.university'),
-            license: this.t('about.education.license')
-          },
-          {
-            degree: this.t('about.education.tsu'),
-            university: this.t('about.education.university')
-          }
-        ]
-      },
-      // Idiomas
-      languages: {
-        title: this.t('about.languages.title'),
-        items: [
-          { name: this.t('about.languages.spanish'), level: 'Nativo', levelPercent: 100 },
-          { name: this.t('about.languages.english'), level: 'Intermedio - Avanzado', levelPercent: 70 }
-        ]
-      }
+      ]
     };
   }
-
 
   t(key: string): string {
     return this.i18n.t(key);

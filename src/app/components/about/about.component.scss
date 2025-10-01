@@ -28,146 +28,17 @@ $primary-dark: #2563eb;
   @apply w-16 h-1 bg-gradient-to-r from-primary to-primary-dark mx-auto rounded-full;
 }
 
-// Profile Section
-.about-profile {
-  @apply grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16;
-}
-
-.about-image-container {
-  @apply flex justify-center;
-}
-
-.image-placeholder {
-  @apply w-64 h-64 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center text-white text-6xl shadow-xl dark:shadow-gray-900/30;
-}
-
-.about-basic-info {
-  @apply text-center lg:text-left;
-}
-
-.about-name {
-  @apply text-3xl font-bold text-gray-900 dark:text-white mb-2;
-}
-
-.about-role {
-  @apply text-xl text-primary font-semibold mb-4;
-}
-
-.about-description {
-  @apply text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6;
-}
-
-.about-stats {
-  @apply grid grid-cols-3 gap-4 mt-8;
-}
-
-.about-stat {
-  @apply text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl;
-}
-
-.stat-number {
-  @apply block text-2xl font-bold text-primary dark:text-primary mb-1; // Cambiado a dark:text-primary
-}
-
-.stat-label {
-  @apply block text-sm text-gray-600 dark:text-gray-300 font-medium;
-}
-
 // Details Section
-.about-details {
-  @apply mb-16;
-}
-
-.about-section {
-  @apply space-y-12;
-}
-
-.about-experience,
-.about-education {
-  @apply space-y-6;
-}
-
 .details-title {
   @apply text-2xl font-semibold text-gray-900 dark:text-white mb-4;
-}
-
-.about-column {
-  @apply space-y-8;
-}
-
-.border-l-2 {
-  @apply pl-6; // espacio interno para que no se pegue el texto
 }
 
 .details-description {
   @apply text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6;
 }
 
-.about-features {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-6 mt-8;
-}
-
-.feature-card {
-  @apply bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl text-center md:text-left transition-all duration-300 hover:translate-y-[-4px];
-}
-
-.feature-icon {
-  @apply text-4xl mb-4;
-}
-
-.feature-title {
-  @apply text-xl font-semibold text-gray-900 dark:text-white mb-2;
-}
-
-.feature-description {
-  @apply text-gray-600 dark:text-gray-300;
-}
-
-// CTA Section
-.about-cta {
-  @apply bg-gradient-to-br from-primary to-primary-dark p-8 rounded-2xl text-center text-white;
-}
-
-.cta-content {
-  @apply max-w-2xl mx-auto;
-}
-
-.cta-title {
-  @apply text-3xl font-bold mb-4;
-}
-
-.cta-description {
-  @apply text-lg opacity-90 mb-8;
-}
-
-.cta-buttons {
-  @apply flex flex-col sm:flex-row gap-4 justify-center;
-}
-
-.cta-button {
-  @apply px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1;
-
-  &--primary {
-    @apply bg-white text-primary hover:bg-gray-100;
-  }
-
-  &--secondary {
-    @apply border-2 border-white text-white hover:bg-white hover:text-primary;
-  }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeInUp 0.6s ease-out forwards;
+.animate-bounce2 {
+  animation: bounce 4s ease infinite;
 }
 
 @keyframes bounce {
@@ -182,14 +53,26 @@ $primary-dark: #2563eb;
   }
 }
 
-.animate-bounce {
-  animation: bounce 4.5s ease infinite;
+@keyframes pulseSoft {
+  0%, 100% { box-shadow: 0 0 0 rgba(59, 130, 246, 0); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.25); }
 }
-.animate-bounce2 {
-  animation: bounce 3.5s ease infinite;
+.edu-card,
+.experience-card {
+  @media (min-width: 1024px) {
+    animation: pulseSoft 6s ease-in-out infinite;
+  }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.animate-pulseSoft {
+  animation: pulseSoft 6s ease-in-out infinite;
 }
 
+@keyframes pulseandScale {
+  0%, 100% { box-shadow: 0 0 0 rgba(59, 130, 246, 0); transform: scale(1); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.25); transform: scale(1.02); }
+}
+
+.animate-pulseandScale {
+  animation: pulseandScale 4s ease-in-out infinite;
+}

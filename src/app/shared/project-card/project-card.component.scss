@@ -24,3 +24,11 @@
     }
   }
 }
+@keyframes pulseandScale {
+  0%, 100% { box-shadow: 0 0 0 rgba(59, 130, 246, 0); transform: scale(1); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.25); transform: scale(1.02); }
+}
+
+.animate-pulseandScale {
+  animation: pulseandScale 6s ease-in-out infinite;
+}
