@@ -1,12 +1,14 @@
 <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">{{ t('skills.title') }}</h2>
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+      {{ t('skills.title') }}
+    </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
       <!-- Technical Skills -->
-      <div>
-        <h3 class="text-xl font-semibold mb-6 text-primary dark:text-primary-300 flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+      <div class="text-center md:text-left">
+        <h3 class="text-xl font-semibold mb-6 text-primary dark:text-primary-300 flex items-center justify-center md:justify-start">
+          <svg class="w-5 h-5 mr-2 text-primary/80" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
           </svg>
           {{ t('skills.technical') }}
@@ -21,12 +23,12 @@
         </div>
       </div>
 
-      <!-- Columna derecha: Soft Skills + Languages -->
-      <div class="space-y-12">
+      <!-- Right Column: Soft Skills + Languages -->
+      <div class="space-y-12 text-center md:text-left">
         <!-- Soft Skills -->
         <div>
-          <h3 class="text-xl font-semibold mb-6 text-secondary dark:text-secondary-300 flex items-center">
-            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <h3 class="text-xl font-semibold mb-6 text-secondary dark:text-secondary-300 flex items-center justify-center md:justify-start">
+            <svg class="w-5 h-5 mr-2 text-secondary/80" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
             </svg>
             {{ t('skills.soft') }}
@@ -41,9 +43,12 @@
           </div>
         </div>
 
+        <!-- Divider -->
+        <hr class="border-gray-200 dark:border-gray-700 my-8">
+
         <!-- Languages -->
         <div>
-          <h3 class="text-xl font-semibold mb-6 text-green-600 dark:text-green-400 flex items-center">
+          <h3 class="text-xl font-semibold mb-6 text-green-600 dark:text-green-400 flex items-center justify-center md:justify-start">
             🌐 {{ t('about.languages.title') }}
           </h3>
           <div class="space-y-4">
@@ -57,6 +62,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
